@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:pca/src/pages/home_page.dart';
-import 'package:pca/src/pages/loading_page.dart';
+import 'package:pca/src/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoadingPage(),
+      initialRoute: '/',
+      routes: getAplicationRoutes(),
     );
   }
 }

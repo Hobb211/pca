@@ -1,15 +1,43 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:pca/src/pages/home_page.dart';
 
 
-class LoadingPage extends StatelessWidget {
+class LoadingPage extends StatefulWidget {
+  @override
+  State<LoadingPage> createState() => _LoadingPageState();
+}
 
+class _LoadingPageState extends State<LoadingPage> {
   final letra=TextStyle(
     fontSize: 50,
     color: Colors.white,
   );
 
   @override
+  void initState(){
+    super.initState();
+    startTime();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    return Scaffold(
+        body: initScreen(context)
+    );
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 5);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
+  initScreen(BuildContext context){
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -41,4 +69,6 @@ class LoadingPage extends StatelessWidget {
       ),
     );
   }
+
 }
+
