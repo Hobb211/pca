@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               ElevatedButton(onPressed: (){}, child: Text('Química',style: letra,),style: boton,),
               Divider(height: 20,),
-              ElevatedButton(onPressed: (){}, child: Text('Física',style: letra,),style: boton,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Text('Física',style: letra,),style: boton,),
               Divider(height: 20,),
               ElevatedButton(onPressed: (){}, child: Text('Matemáticas',style: letra,),style: boton,),
               Divider(height: 20,),
