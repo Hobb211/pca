@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
 
-
 class FisicaPage extends StatelessWidget {
 
-  final letra=TextStyle(fontSize: 30,);
+  final letra=TextStyle(fontSize: 26,);
+  final letra2=TextStyle(fontSize: 20,);
   final boton=ButtonStyle(
-      fixedSize: MaterialStateProperty.all(Size(240,60)),
-      backgroundColor: MaterialStateProperty.all(Colors.green),
+    fixedSize: MaterialStateProperty.all(Size(300,120)),
+    backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(80)
+      )
+    ),
+    foregroundColor: MaterialStateProperty.all(Colors.black),
   );
 
 
@@ -15,7 +21,7 @@ class FisicaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Fisica',style: letra,),
+        title: Text('Física',style: TextStyle(fontSize: 30),),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -25,16 +31,14 @@ class FisicaPage extends StatelessWidget {
           ),
         ),
         child: Center(
-            child:Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: null,
-                    style: boton,
-
-
-                    child: Text('Menu',style: letra,)
-                  ),
+              children: <Widget>[
+                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'MRU'), child: Stack(children: texto('MRU')),style: boton),
+                Divider(height: 20,),
+                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Stack(children: texto(' Lanzamiento\n  de proyectil')),style: boton),
+                Divider(height: 20,),
+                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matematicas'), child: Stack(children: texto('Caida libre')),style: boton),
               ],
             ),
         ),
@@ -42,5 +46,23 @@ class FisicaPage extends StatelessWidget {
     );
   }
 
+  List<Widget> texto(texto){
+    final letra=TextStyle(
+      fontSize: 35,
+      foreground: Paint()
+        ..style=PaintingStyle.stroke
+        ..strokeWidth = 6
+        ..color = Colors.black,
+    );
+    final letra2=TextStyle(
+        fontSize: 35,
+        color: Colors.white
+    );
+
+    return <Widget>[
+      Text(texto,style: letra,),
+      Text(texto,style: letra2,)
+    ];
+  }
 
 }

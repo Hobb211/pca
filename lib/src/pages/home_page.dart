@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
 
-  final letra=TextStyle(fontSize: 30,);
   final boton=ButtonStyle(
-      fixedSize: MaterialStateProperty.all(Size(240,60)),
-      backgroundColor: MaterialStateProperty.all(Colors.green)
+      fixedSize: MaterialStateProperty.all(Size(260,80)),
+      backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
+      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)))
   );
 
 
@@ -25,13 +25,13 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(onPressed: (){}, child: Text('Química',style: letra,),style: boton,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Quimica'), child: Stack(children: texto('Química')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Text('Física',style: letra,),style: boton,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Stack(children: texto('Física')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: (){}, child: Text('Matemáticas',style: letra,),style: boton,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matematicas'), child: Stack(children: texto('Matemáticas')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: (){}, child: Text('Computación',style: letra,),style: boton,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Computacion'), child: Stack(children: texto('Computación')),style: boton,),
             ],
           ),
       ),
@@ -39,5 +39,23 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  List<Widget> texto(texto){
+    final letra=TextStyle(
+      fontSize: 35,
+      foreground: Paint()
+        ..style=PaintingStyle.stroke
+        ..strokeWidth = 6
+        ..color = Colors.black,
+    );
+    final letra2=TextStyle(
+      fontSize: 35,
+      color: Colors.white
+    );
+
+    return <Widget>[
+      Text(texto,style: letra,),
+      Text(texto,style: letra2,)
+    ];
+  }
 
 }
