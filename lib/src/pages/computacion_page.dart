@@ -6,14 +6,11 @@ class ComputacionPage extends StatelessWidget {
   final letra=TextStyle(fontSize: 26,);
   final letra2=TextStyle(fontSize: 20,);
   final boton=ButtonStyle(
-    fixedSize: MaterialStateProperty.all(Size(160,160)),
-    backgroundColor: MaterialStateProperty.all(Colors.green),
+    fixedSize: MaterialStateProperty.all(Size(300,120)),
+    backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
     shape: MaterialStateProperty.all(
-        CircleBorder(
-            side: BorderSide(
-                color: Colors.white,
-                width: 5
-            )
+        RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(80)
         )
     ),
     foregroundColor: MaterialStateProperty.all(Colors.black),
@@ -34,59 +31,38 @@ class ComputacionPage extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: _crearBotones(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Quimica'), child: Stack(children: texto('Matrices')),style: boton),
+              Divider(height: 20,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Stack(children: texto('Compuertas\n      Logicas')),style: boton),
+              Divider(height: 20,),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matematicas'), child: Stack(children: texto('Listas Dobles')),style: boton),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Column _crearBotones(){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        ElevatedButton(
-            onPressed: null,
-            style: boton,
-            child: Text('Introducción',style: letra2,)
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <ElevatedButton>[
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('MRU',style: letra,)
-            ),
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('MRUA',style: letra,)
-            ),
-          ],
-        ),
-        ElevatedButton(
-            onPressed: null,
-            style: boton,
-            child: Text('Simulador',style: letra,)
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <ElevatedButton>[
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('Ejercicios',style: letra,)
-            ),
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('Desafío\n  Final',style: letra,)
-            ),
-          ],
-        ),
-      ],
+  List<Widget> texto(texto){
+    final letra=TextStyle(
+      fontSize: 35,
+      foreground: Paint()
+        ..style=PaintingStyle.stroke
+        ..strokeWidth = 6
+        ..color = Colors.black,
     );
-  }
+    final letra2=TextStyle(
+        fontSize: 35,
+        color: Colors.white
+    );
 
+    return <Widget>[
+      Text(texto,style: letra,),
+      Text(texto,style: letra2,)
+    ];
+  }
 
 }
