@@ -11,8 +11,9 @@ class LoadingPage extends StatefulWidget {
 
 class _LoadingPageState extends State<LoadingPage> {
   final letra=TextStyle(
-    fontSize: 50,
+    fontSize: 57,
     color: Colors.white,
+    fontFamily: 'Urban Jungle',
   );
 
   @override
@@ -46,8 +47,14 @@ class _LoadingPageState extends State<LoadingPage> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Text(' Simu\nEduca\n UCN',style: letra,),
-        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Divider(height: 35,),
+            Text('   Simu\nEduca\n    UCN',style: letra,),
+            Divider()
+          ],
+        ),
       ),
       floatingActionButton: Container(
         width: 100,
