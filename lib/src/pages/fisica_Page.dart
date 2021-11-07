@@ -36,9 +36,9 @@ class FisicaPage extends StatelessWidget {
               children: <Widget>[
                 ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'MRU'), child: Stack(children: texto('MRU')),style: boton),
                 Divider(height: 20,),
-                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Stack(children: texto(' Lanzamiento\n  de proyectil')),style: boton),
+                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Proyectil'), child: Stack(children: texto(' Lanzamiento\n  de proyectil')),style: boton),
                 Divider(height: 20,),
-                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matematicas'), child: Stack(children: texto('Caida libre')),style: boton),
+                ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Caida'), child: Stack(children: texto('Caida libre')),style: boton),
               ],
             ),
         ),

@@ -34,11 +34,11 @@ class QuimicaPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Quimica'), child: Stack(children: texto('  Enlace\n Químico')),style: boton),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'EnlaceQ'), child: Stack(children: texto('  Enlace\n Químico')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Stack(children: texto(' Estructura\n  Molecular')),style: boton),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'EstructuraM'), child: Stack(children: texto(' Estructura\n  Molecular')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matematicas'), child: Stack(children: texto('Configuración\n   Electrónica')),style: boton),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'ConfiguracionE'), child: Stack(children: texto('Configuración\n   Electrónica')),style: boton),
             ],
           ),
         ),
