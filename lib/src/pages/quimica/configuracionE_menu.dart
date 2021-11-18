@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class ConfiguracionEMenu extends StatelessWidget {
 
   final letra=TextStyle(fontSize: 24,);
-  final letra2=TextStyle(fontSize: 20,);
+  final letra2=TextStyle(fontSize: 22,);
   final boton=ButtonStyle(
     fixedSize: MaterialStateProperty.all(Size(160,160)),
-    backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
+    backgroundColor: MaterialStateProperty.all(Color(0xFF38B000)),
     shape: MaterialStateProperty.all(
         CircleBorder(
             side: BorderSide(
@@ -34,58 +34,53 @@ class ConfiguracionEMenu extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: _crearBotones(),
+        child: ListView(
+          children: <Widget>[
+            Divider(height: 30,),
+            ElevatedButton(
+                onPressed: null,
+                style: boton,
+                child: Text('Introducción',style: letra2,)
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <ElevatedButton>[
+                ElevatedButton(
+                    onPressed: null,
+                    style: boton,
+                    child: Text('Estructura\ndel Atomo',style: letra,)
+                ),
+                ElevatedButton(
+                    onPressed: null,
+                    style: boton,
+                    child: Text('Diagrama\n       de\n   Moller',style: letra,)
+                ),
+              ],
+            ),
+            ElevatedButton(
+                onPressed: null,
+                style: boton,
+                child: Text('Notación\nCuantica',style: letra,)
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <ElevatedButton>[
+                ElevatedButton(
+                    onPressed: null,
+                    style: boton,
+                    child: Text('Ejercicios',style: letra,)
+                ),
+                ElevatedButton(
+                    onPressed: null,
+                    style: boton,
+                    child: Text('Desafío\n  Final',style: letra,)
+                ),
+              ],
+            ),
+            Divider(height: 30,),
+          ],
         ),
       ),
-    );
-  }
-
-  Column _crearBotones(){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        ElevatedButton(
-            onPressed: null,
-            style: boton,
-            child: Text('Introducción',style: letra2,)
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <ElevatedButton>[
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('Estructura\ndel Atomo',style: letra,)
-            ),
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('Diagrama\n       de\n   Moller',style: letra,)
-            ),
-          ],
-        ),
-        ElevatedButton(
-            onPressed: null,
-            style: boton,
-            child: Text('Notación\nCuantica',style: letra,)
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <ElevatedButton>[
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('Ejercicios',style: letra,)
-            ),
-            ElevatedButton(
-                onPressed: null,
-                style: boton,
-                child: Text('Desafío\n  Final',style: letra,)
-            ),
-          ],
-        ),
-      ],
     );
   }
 

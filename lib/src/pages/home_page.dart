@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
 
   final boton=ButtonStyle(
       fixedSize: MaterialStateProperty.all(Size(260,80)),
-      backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
+      backgroundColor: MaterialStateProperty.all(Color(0xFF38B000)),
       shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)))
   );
 

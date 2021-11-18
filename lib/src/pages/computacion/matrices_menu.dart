@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class EstructuraMMenu extends StatelessWidget {
+class MatricesMenu extends StatelessWidget {
 
   final letra=TextStyle(fontSize: 26,);
   final letra2=TextStyle(fontSize: 22,);
@@ -24,7 +24,7 @@ class EstructuraMMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Estructura Molecular',style: TextStyle(fontSize: 30),),
+        title: Text('Matrices',style: TextStyle(fontSize: 30),),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -35,51 +35,64 @@ class EstructuraMMenu extends StatelessWidget {
         ),
         child: ListView(
           children: <Widget>[
-            Divider(height: 65,),
+            Divider(height: 30,),
             ElevatedButton(
                 onPressed: null,
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
-            Divider(height: 25,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
                     onPressed: null,
                     style: boton,
-                    child: Text('Diagrama\n de Lewis',style: letra,)
+                    child: Text('¿Que es\n     un\n  array?',style: letra,)
                 ),
                 ElevatedButton(
                     onPressed: null,
                     style: boton,
-                    child: Text('     Tabla\nGeometría\nMolecular',style: letra,)
+                    child: Text('¿Que es\n     una\n  matriz?',style: letra,)
                 ),
               ],
             ),
-            Divider(height: 40,),
+            ElevatedButton(
+                onPressed: null,
+                style: boton,
+                child: Text('¿Como se \n crea una\n  matriz?',style: letra,)
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
                     onPressed: null,
                     style: boton,
-                    child: Text('Ejercicios',style: letra,)
+                    child: Text('Matrices\n       en\n    Java',style: letra,)
                 ),
                 ElevatedButton(
                     onPressed: null,
                     style: boton,
-                    child: Text('Desafío\n  Final',style: letra,)
+                    child: Text('Matrices\n       en\n  Python',style: letra,)
                 ),
               ],
             ),
+            ElevatedButton(
+                onPressed: null,
+                style: boton,
+                child: Text('Ejercicios',style: letra,)
+            ),
+            Divider(),
+            ElevatedButton(
+                onPressed: null,
+                style: boton,
+                child: Text('Desafío\n   Final',style: letra,)
+            ),
+            Divider(height: 30,),
           ],
         ),
       ),
     );
   }
-
-
 
 
 

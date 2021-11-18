@@ -7,7 +7,7 @@ class ComputacionPage extends StatelessWidget {
   final letra2=TextStyle(fontSize: 20,);
   final boton=ButtonStyle(
     fixedSize: MaterialStateProperty.all(Size(300,120)),
-    backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
+    backgroundColor: MaterialStateProperty.all(Color(0xFF38B000)),
     shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(80)
@@ -34,11 +34,11 @@ class ComputacionPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Quimica'), child: Stack(children: texto('Matrices')),style: boton),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matrices'), child: Stack(children: texto('Matrices')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Fisica'), child: Stack(children: texto('Compuertas\n      Logicas')),style: boton),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Compuertas'), child: Stack(children: texto('Compuertas\n      Logicas')),style: boton),
               Divider(height: 20,),
-              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Matematicas'), child: Stack(children: texto('Listas Dobles')),style: boton),
+              ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, 'Listas'), child: Stack(children: texto('Listas Dobles')),style: boton),
             ],
           ),
         ),

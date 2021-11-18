@@ -7,7 +7,7 @@ class QuimicaPage extends StatelessWidget {
   final letra2=TextStyle(fontSize: 20,);
   final boton=ButtonStyle(
     fixedSize: MaterialStateProperty.all(Size(300,120)),
-    backgroundColor: MaterialStateProperty.all(Color(0xFF2AFF1B)),
+    backgroundColor: MaterialStateProperty.all(Color(0xFF38B000)),
     shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(80)
