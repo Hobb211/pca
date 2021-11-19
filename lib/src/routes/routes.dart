@@ -6,6 +6,7 @@ import 'package:pca/src/pages/computacion/matrices_menu.dart';
 import 'package:pca/src/pages/computacion_page.dart';
 import 'package:pca/src/pages/fisica/caida_menu.dart';
 import 'package:pca/src/pages/fisica/mru/intro_mru.dart';
+import 'package:pca/src/pages/fisica/mru/mru.dart';
 import 'package:pca/src/pages/fisica/mru_menu.dart';
 import 'package:pca/src/pages/fisica/proyectil_menu.dart';
 import 'package:pca/src/pages/fisica_Page.dart';
@@ -50,5 +51,6 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
 
     //MRU
     'IntroMRU':(BuildContext context)=>IntroMRU(),
+    'MRULeccion':(BuildContext context)=>MRULeccion(),
   };
 }

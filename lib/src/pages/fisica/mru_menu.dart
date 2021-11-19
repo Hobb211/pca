@@ -45,7 +45,7 @@ class MRUmenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, "MRULeccion"),
                     style: boton,
                     child: Text('MRU',style: letra,)
                 ),
