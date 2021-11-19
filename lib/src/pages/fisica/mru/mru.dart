@@ -8,6 +8,10 @@ class MRULeccion extends StatelessWidget{
       backgroundColor: MaterialStateProperty.all(Color(0xFF2B2927)),
       elevation: MaterialStateProperty.all(0)
   );
+  final boton2=ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Color(0xFFDCD6D6)),
+      elevation: MaterialStateProperty.all(0)
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -54,34 +58,65 @@ class MRULeccion extends StatelessWidget{
               ),
               Divider(height: 30,),
               Container(
-                width: 180,
+                width: 181,
                 padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                 decoration: BoxDecoration(
                     color: Color(0xFFDCD6D6),
                     borderRadius: BorderRadius.circular(15),
                 ),
-                child: Row(
+                child:Row(
                   children: <Widget>[
-                    Text("x(t)",style: TextStyle(fontSize: 24,color: Colors.red),),
+                    InkWell(
+                      onTap: ()=>_formula1(context),
+                      child: Container(
+                        height: 35,
+                        width: 44,
+                        child: Text("x(t)",style: TextStyle(fontSize: 24,color: Colors.red),),
+                      ),
+                    ),
                     Text("=",style: TextStyle(fontSize: 24)),
-                    Text("x",style: TextStyle(fontSize: 24,color: Colors.blue)),
-                    Column(
-                      children: [
-                        Divider(height: 10,),
-                        Text("0",style: TextStyle(fontSize: 14,color: Colors.blue,)),
-                      ],
+                    InkWell(
+                      onTap: ()=>_formula2(context),
+                      child: Container(
+                        height: 35,
+                        width: 25,
+                        child: Row(
+                          children: [
+                            Text("x",style: TextStyle(fontSize: 24,color: Colors.blue)),
+                            Column(
+                              children: [
+                                Divider(height: 15,),
+                                Text("0",style: TextStyle(fontSize: 14,color: Colors.blue,)),
+                              ],
+                            ),
+                          ],
+                        )
+                      ),
                     ),
                     Text("+",style: TextStyle(fontSize: 24)),
-                    Text("v",style: TextStyle(fontSize: 24,color: Colors.green)),
-                    Column(
-                      children: [
-                        Divider(height: 10,),
-                        Text("0",style: TextStyle(fontSize: 14,color: Colors.green)),
-                      ]
+                    InkWell(
+                      onTap: ()=>_formula3(context),
+                      child: Container(
+                        height: 35,
+                        width: 46,
+                        child: Row(
+                          children: [
+                            Text("v",style: TextStyle(fontSize: 24,color: Colors.green)),
+                            Column(
+                                children: [
+                                  Divider(height: 10,),
+                                  Text("0",style: TextStyle(fontSize: 14,color: Colors.green)),
+                                ]
+                            ),
+                            Text("*t",style: TextStyle(fontSize: 24,color: Colors.green)),
+                          ],
+                        )
+                      ),
                     ),
-                    Text("*t",style: TextStyle(fontSize: 24,color: Colors.green)),
-                  ]
+                  ],
                 ),
+
+
               ),
               Divider(height: 40,),
               Row(
@@ -110,7 +145,7 @@ class MRULeccion extends StatelessWidget{
                                   ),
                                   VerticalDivider(width: 10,),
                                   ElevatedButton(
-                                    onPressed: null,
+                                    onPressed: ()=>Navigator.pushNamed(context, "MRUALeccion"),
                                     child: Icon(Icons.arrow_forward_ios),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
@@ -149,10 +184,70 @@ class MRULeccion extends StatelessWidget{
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           backgroundColor: Color(0xFF38B000),
           content: Container(
-            height: 144,
+            height: 50,
             width: 100,
-            child: Text("Debes recordar que en MRU x representa la posición,"
-                " v representa la velocidad, a la aceleración y t el tiempo.",
+            child: Text("Prueba tocando la formula",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+
+        );
+      },
+    );
+  }
+
+  void _formula1(BuildContext context){
+    showDialog(
+      context: context,
+      builder: (context){
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          backgroundColor: Color(0xFF38B000),
+          content: Container(
+            height: 50,
+            width: 100,
+            child: Text("Representa la posición en el tiempo",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+
+        );
+      },
+    );
+  }
+
+  void _formula2(BuildContext context){
+    showDialog(
+      context: context,
+      builder: (context){
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          backgroundColor: Color(0xFF38B000),
+          content: Container(
+            height: 50,
+            width: 100,
+            child: Text("Representa la posición inicial del objeto",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+
+        );
+      },
+    );
+  }
+
+  void _formula3(BuildContext context){
+    showDialog(
+      context: context,
+      builder: (context){
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          backgroundColor: Color(0xFF38B000),
+          content: Container(
+            height: 120,
+            width: 100,
+            child: Text("Representa la distancia recorrida del objeto despues de "
+                "una cantidad de tiempo a una velocidad constante",
               style: TextStyle(fontSize: 20),
             ),
           ),
