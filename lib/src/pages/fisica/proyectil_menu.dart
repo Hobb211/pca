@@ -38,7 +38,7 @@ class ProyectilMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, "IntroProyectil"),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -46,7 +46,7 @@ class ProyectilMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, "FormulasProyectil"),
                     style: boton,
                     child: Text('Formula',style: letra,)
                 ),
