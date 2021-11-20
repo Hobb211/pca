@@ -45,7 +45,7 @@ class CaidaMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, "FormulasCaida"),
                     style: boton,
                     child: Text('Formula',style: letra,)
                 ),
