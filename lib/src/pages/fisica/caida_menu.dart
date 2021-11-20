@@ -37,7 +37,7 @@ class CaidaMenu extends StatelessWidget {
           children:<Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'IntroCaida'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),

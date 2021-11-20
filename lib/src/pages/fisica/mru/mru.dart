@@ -104,7 +104,7 @@ class MRULeccion extends StatelessWidget{
                             Text("v",style: TextStyle(fontSize: 24,color: Colors.green)),
                             Column(
                                 children: [
-                                  Divider(height: 10,),
+                                  Divider(height: 15,),
                                   Text("0",style: TextStyle(fontSize: 14,color: Colors.green)),
                                 ]
                             ),
