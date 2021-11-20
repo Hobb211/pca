@@ -62,7 +62,6 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'IntroProyectil':(BuildContext context)=>IntroProyectil(),
     'FormulasProyectil':(BuildContext context)=>FormulasProyectil(),
 
-
     //Caida
     'IntroCaida':(BuildContext context)=>IntroCaida()
 

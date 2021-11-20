@@ -55,9 +55,8 @@ class IntroMRU extends StatelessWidget{
               Divider(),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                    style: boton,
-                    onPressed: ()=>_profe(context),
+                  InkWell(
+                    onTap: ()=>_profe(context),
                     child: Image(image: AssetImage("assets/BLABLA.png"),height: 210,)
                   ),
                   VerticalDivider(width: 110,),

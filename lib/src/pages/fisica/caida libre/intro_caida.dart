@@ -25,11 +25,11 @@ class IntroCaida extends StatelessWidget{
               Divider(height: 60,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                  InkWell(
+                      onTap:()=>Navigator.pushNamed(context, "MRU"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
+                  VerticalDivider(width: 30,),
                   Container(
                     width: 250,
                     child: Text("Introducción",style: letra,),
@@ -52,12 +52,11 @@ class IntroCaida extends StatelessWidget{
                   color: Color(0xFFDCD6D6),
                 ),
               ),
-              Divider(height: 130,),
+              Divider(height:130,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed: ()=>_profe(context),
+                  InkWell(
+                      onTap: ()=>_profe(context),
                       child: Image(image: AssetImage("assets/BLABLA.png"),height: 210,)
                   ),
                   VerticalDivider(width: 110,),
