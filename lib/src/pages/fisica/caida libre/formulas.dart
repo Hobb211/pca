@@ -105,15 +105,15 @@ class FormulasCaida extends StatelessWidget{
                       InkWell(
                         onTap: ()=>_formula3(context,scaleHeigth,scaleWidth),
                         child: Container(
-                            height: 35,
-                            width: 100,
+                            height: 35*scaleHeigth,
+                            width: 100*scaleWidth,
                             child: Row(
                               children: [
                                 Text("(1/2)g*t",style: TextStyle(fontSize: scaleWidth*24,color: Colors.green)),
                                 Column(
                                     children: [
                                       Text("2",style: TextStyle(fontSize: scaleWidth*14,color: Colors.green)),
-                                      Divider(height: 15,),
+                                      Divider(height: 15*scaleHeigth,),
                                     ]
                             )
                             ]
@@ -132,15 +132,25 @@ class FormulasCaida extends StatelessWidget{
                         onTap: ()=>_profe(context,scaleHeigth,scaleWidth),
                         child: Image(image: AssetImage("assets/BLABLA.png"),height: scaleHeigth*210,)
                     ),
-                    VerticalDivider(width: scaleWidth*110,),
+                    VerticalDivider(width: scaleWidth*50,),
                     Column(
                         children: <Widget>[
                           Divider(height: scaleHeigth*100,),
-                          ElevatedButton(
-                            onPressed: ()=>Navigator.pushNamed(context, "MRULeccion"),
-                            child: Icon(Icons.arrow_forward_ios),
-                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
-                          ),
+                          Row(
+                              children: <Widget>[
+                                ElevatedButton(
+                                  onPressed: ()=>Navigator.pushNamed(context, "IntroCaida"),
+                                  child: Icon(Icons.arrow_back_ios_sharp),
+                                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                                ),
+                                VerticalDivider(width: 10,),
+                                ElevatedButton(
+                                  onPressed: ()=>Navigator.pushNamed(context, "FormulasCaida"),
+                                  child: Icon(Icons.arrow_forward_ios),
+                                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                                ),
+                              ]
+                          )
                         ]
                     )
                   ],
