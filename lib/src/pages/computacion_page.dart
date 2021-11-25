@@ -22,6 +22,15 @@ class ComputacionPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Computación',style: TextStyle(fontSize: 30),),
+        leading: InkWell(
+          child: Container(
+            child: Image(image: AssetImage("assets/home.png")),
+            padding: EdgeInsets.all(5),
+          ),
+          onTap: ()=>Navigator.pushNamed(context, "Home"),
+        ),
+        backgroundColor: Color(0xFF2B2927),
+        elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(

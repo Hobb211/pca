@@ -26,6 +26,15 @@ class ConfiguracionEMenu extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 80,
         title: Text('Configuración\nElectrónica',style: TextStyle(fontSize: 30),),
+        leading: InkWell(
+          child: Container(
+            child: Image(image: AssetImage("assets/home.png")),
+            padding: EdgeInsets.all(5),
+          ),
+          onTap: ()=>Navigator.pushNamed(context, "Quimica"),
+        ),
+        backgroundColor: Color(0xFF2B2927),
+        elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(

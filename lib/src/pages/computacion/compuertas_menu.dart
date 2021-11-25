@@ -25,6 +25,15 @@ class CompuertasMenu extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Compuertas Logicas',style: TextStyle(fontSize: 30),),
+        leading: InkWell(
+          child: Container(
+            child: Image(image: AssetImage("assets/home.png")),
+            padding: EdgeInsets.all(5),
+          ),
+          onTap: ()=>Navigator.pushNamed(context, "Computacion"),
+        ),
+        backgroundColor: Color(0xFF2B2927),
+        elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(

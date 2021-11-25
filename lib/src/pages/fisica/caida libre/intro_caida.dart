@@ -116,8 +116,7 @@ class IntroCaida extends StatelessWidget{
           content: Container(
             height: 144*scaleHeight,
             width: 100*scaleWidth,
-            child: Text("Debes recordar que en MRU x representa la posición,"
-                " v representa la velocidad, a la aceleración y t el tiempo.",
+            child: Text("Los movimientos de caida libre son movimientos MRUA en el eje y",
               style: TextStyle(fontSize: 20*scaleWidth),
             ),
           ),
