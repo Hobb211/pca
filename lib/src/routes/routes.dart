@@ -9,6 +9,7 @@ import 'package:pca/src/pages/fisica/caida%20libre/intro_caida.dart';
 import 'package:pca/src/pages/fisica/caida_menu.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/formulas.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/intro_proyectil.dart';
+import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/simulador.dart';
 import 'package:pca/src/pages/fisica/mru/intro_mru.dart';
 import 'package:pca/src/pages/fisica/mru/mru.dart';
 import 'package:pca/src/pages/fisica/mru/mrua.dart';
@@ -62,6 +63,7 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     //Proyectil
     'IntroProyectil':(BuildContext context)=>IntroProyectil(),
     'FormulasProyectil':(BuildContext context)=>FormulasProyectil(),
+    'SimuladorProyectil':(BuildContext context)=>SimuladorProyectil(),
 
     //Caida
     'IntroCaida':(BuildContext context)=>IntroCaida(),

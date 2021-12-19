@@ -60,7 +60,7 @@ class ProyectilMenu extends StatelessWidget {
                     child: Text('Formula',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, "SimuladorProyectil"),
                     style: boton,
                     child: Text('Simulador',style: letra,)
                 ),
