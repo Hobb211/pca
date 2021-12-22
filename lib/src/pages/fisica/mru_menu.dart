@@ -66,7 +66,7 @@ class MRUmenu extends StatelessWidget {
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, "SimuladorMru"),
                 style: boton,
                 child: Text('Simulador',style: letra,)
             ),

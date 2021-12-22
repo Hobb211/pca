@@ -3,21 +3,18 @@ import 'package:flutter/services.dart';
 import 'dart:math'as math;
 import 'dart:io';
 
-double angulo=0;
+
 double velocidad=0;
 int posicionI=0;
 double posicion=0;
-int tiempo=0;
-int tiempo2=0;
-double alturaMax=0;
 
 
-class SimuladorProyectil extends StatefulWidget{
+class SimuladorMru extends StatefulWidget{
   @override
-  State<SimuladorProyectil> createState() => _SimuladorProyectilState();
+  State<SimuladorMru> createState() => _SimuladorMruState();
 }
 
-class _SimuladorProyectilState extends State<SimuladorProyectil> {
+class _SimuladorMruState extends State<SimuladorMru> {
   final boton=ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Color(0xFF2B2927)),
       elevation: MaterialStateProperty.all(0)
@@ -48,17 +45,17 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
 
 
     return Scaffold(
-      body: Form(
-        key: formKey,
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/background.gif"),
-              fit: BoxFit.cover,
+        body: Form(
+          key: formKey,
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/background.gif"),
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          child:SingleChildScrollView(
+            child:SingleChildScrollView(
               child: Column(
                 children: <Widget>[
                   Divider(height: 60*scaleHeigth,),
@@ -66,7 +63,7 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                     children: <Widget>[
                       ElevatedButton(
                           style: boton,
-                          onPressed:()=>Navigator.pushNamed(context, "Proyectil"),
+                          onPressed:()=>Navigator.pushNamed(context, "MRU"),
                           child: Image(image: AssetImage("assets/arrow.png"),height: 50*scaleHeigth,)
                       ),
                       Container(
@@ -80,7 +77,7 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                   Divider(height: 20*scaleHeigth,),
                   Container(
                     width: 250*scaleWidth,
-                    child: Text("X0= $posicionI m\nV0= $velocidad m/sg\na°= $angulo",style: letra2,),
+                    child: Text("X0= $posicionI m",style: letra2,),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
                     decoration: containers,
                   ),
@@ -90,13 +87,6 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                       VerticalDivider(width:20*scaleWidth ,),
                       Column(
                         children: [
-                          Container(
-                            decoration: containers,
-                            height: 60,
-                            width: 180,
-                            child: Center(child:inputAngulo()),
-                            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                          ),
                           Divider(height:15*scaleHeigth),
                           Container(
                             decoration: containers,
@@ -129,7 +119,6 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                               onTap: (){
                                 final isValid=formKey.currentState!.validate();
                                 if (isValid){
-                                  setTime();
                                   _simulador(scaleHeigth);
                                 }
                               },
@@ -157,28 +146,12 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                 ],
               ),
             ),
-        ),
-      )
+          ),
+        )
     );
   }
 
-  Widget inputAngulo(){
-    return TextFormField(
-      keyboardType: TextInputType.number,
-      validator: (value) {
-        if ( double.parse(value!) <= 90){
-          return null;
-        }
-        return 'Ángulo invalido';
-      },
-      inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,LengthLimitingTextInputFormatter(2)],
-      decoration: InputDecoration(
-        icon: Icon(Icons.airline_seat_flat_angled_outlined),
-        hintText: "Ángulo"
-      ),
-      onChanged: (value)=>setState(()=>angulo=(double.parse(value))),
-    );
-  }
+
 
   Widget inputPosicion(){
     return TextFormField(
@@ -210,10 +183,6 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
     );
   }
 
-  void setTime(){
-    tiempo=-(2*velocidad*math.sin(-(angulo*math.pi/180))/9.8).round();
-    tiempo2=(tiempo/2).toInt();
-  }
 
   void _simulador(double scaleHeigth){
     showDialog(
@@ -222,39 +191,41 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
           return AlertDialog(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             backgroundColor: Color(0xFF38B000),
-            content: Container(
-              height: MediaQuery.of(context).size.height/2,
-              width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      height: 160*scaleHeigth,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFFDCD6D6),
+            content: SingleChildScrollView(
+              child: Container(
+                height: MediaQuery.of(context).size.height/2+30,
+                width: MediaQuery.of(context).size.width,
+                child: Center(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: 160*scaleHeigth,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xFFDCD6D6),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        child: Text(
+                            "Y(t)=Y0+1/2*gt^2\n"
+                                "Vmax=${velocidad} m/sg"),
                       ),
-                      padding: EdgeInsets.all(20),
-                      child: Text("X(t)=X0+V0cos(a°)*t\n"
-                          "Y(t)=Y0+V0sen(a°)*t+1/2*gt^2\n"
-                    "X($tiempo)= ${posicion.toStringAsPrecision(4)} m  \nYmax=${alturaMax.toStringAsPrecision(4)} m  \nt= $tiempo sg  \na°= $angulo°  "),
-                    ),
-                    Divider(height: 20*scaleHeigth,),
-                    Container(
-                      height: 200*scaleHeigth,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage("assets/granja.jpg")),
-                      ),
-                      child:  Center(child:Stack(children: [
-                        canonAnimado(),
-                        balaAnimada()
-                      ]
+                      Divider(height: 20*scaleHeigth,),
+                      Container(
+                          height: 240,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/ciudad.jpg")),
+                          ),
+                          child:  Center(child:Stack(children: [
+                            helicopteroAnimado(),
+                            regaloAnimado()
+                          ]
+                          )
+                          )
                       )
-                      )
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -266,24 +237,21 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
 }
 
 
-class canonAnimado extends StatefulWidget {
+class helicopteroAnimado extends StatefulWidget {
   @override
-  State<canonAnimado> createState() => _canonAnimadoState();
+  State<helicopteroAnimado> createState() => _helicopteroAnimado();
 }
 
-class _canonAnimadoState extends State<canonAnimado> with SingleTickerProviderStateMixin {
+class _helicopteroAnimado extends State<helicopteroAnimado> with SingleTickerProviderStateMixin {
   late AnimationController controller;
-  late Animation<double> rotacion;
-  late Animation<double> time;
 
   @override
   void initState() {
     controller= new AnimationController(
-      vsync: this,
-      duration: Duration(seconds:0)
+        vsync: this,
+        duration: Duration(seconds:0)
     );
 
-    rotacion=Tween(begin: 0.0,end: -(angulo*math.pi/180)).animate(controller);
 
     controller.addListener(() {
       setState(() {});
@@ -311,11 +279,8 @@ class _canonAnimadoState extends State<canonAnimado> with SingleTickerProviderSt
         animation: controller,
         builder: (context,child){
           return Transform.translate(
-            offset: Offset(-115,80),
-            child: Transform.rotate(
-              angle: rotacion.value,
-              child:_canon()
-            ),
+              offset: Offset(0,-100),
+              child: _helicoptero()
           );
         }
     );
@@ -325,30 +290,30 @@ class _canonAnimadoState extends State<canonAnimado> with SingleTickerProviderSt
 
 }
 
-class _canon extends StatelessWidget {
+class _helicoptero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30,
+      height: 20,
       width: 30,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/canon.png"))
+          color: Colors.grey,
+          borderRadius: BorderRadius.horizontal(left: Radius.circular(40))
       ),
     );
   }
 }
 
-class balaAnimada extends StatefulWidget {
+class regaloAnimado extends StatefulWidget {
 
   @override
-  _balaAnimadaState createState() => _balaAnimadaState();
+  _RegaloAnimadaState createState() => _RegaloAnimadaState();
 }
 
-class _balaAnimadaState extends State<balaAnimada> with SingleTickerProviderStateMixin{
+class _RegaloAnimadaState extends State<regaloAnimado> with SingleTickerProviderStateMixin{
   late AnimationController controller;
   late Animation<double> rotacion;
-  late Animation<double> time;
   late Animation<double> horizontal;
   late Animation<double> vertical;
   late Animation<double> vertical2;
@@ -357,22 +322,13 @@ class _balaAnimadaState extends State<balaAnimada> with SingleTickerProviderStat
   void initState() {
     controller= AnimationController(
         vsync: this,
-        duration: Duration(seconds: tiempo)
+        duration: Duration(seconds: 0)
     );
 
-    rotacion=Tween(begin: 0.0,end: tiempo.toDouble()).animate(controller);
-    horizontal=Tween(begin:-100.0,end:40.0).animate(CurvedAnimation(parent: controller, curve: Interval(0.1,1)));
-    vertical=Tween(begin:80.0,end:-80.0).animate(
-      CurvedAnimation(parent: controller, curve: Interval(0.1,0.5,curve: Curves.easeOutCirc))
-    );
-    vertical2=Tween(begin:0.0,end:160.0).animate(
-        CurvedAnimation(parent: controller, curve: Interval(0.5,1,curve: Curves.easeInCirc))
-    );
 
     controller.addListener(() {
       setState(() {});
-      posicion=(posicionI-velocidad*math.sin(-(angulo*math.pi/180))*tiempo);
-      alturaMax=-velocidad*math.sin(-(angulo*math.pi/180))*tiempo2;
+
 
     });
 
@@ -393,14 +349,8 @@ class _balaAnimadaState extends State<balaAnimada> with SingleTickerProviderStat
         animation: controller,
         builder: (context,child){
           return Transform.translate(
-              offset: Offset(horizontal.value,vertical.value),
-              child: Transform.translate(
-                offset: Offset(0,vertical2.value),
-                child:Transform.rotate(
-                    angle: rotacion.value,
-                    child: _bala()
-              ),
-            ),
+              offset: Offset(0,0),
+              child:_regalo()
           );
         }
     );
@@ -409,15 +359,14 @@ class _balaAnimadaState extends State<balaAnimada> with SingleTickerProviderStat
 
 
 
-class _bala extends StatelessWidget{
+class _regalo extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
       height: 15,
       width: 15,
       decoration: BoxDecoration(
-        color: Colors.black26,
-        borderRadius: BorderRadius.circular(15)
+          image: DecorationImage(image: AssetImage("assets/regalo.png"))
       ),
     );
   }

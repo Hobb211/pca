@@ -59,7 +59,7 @@ class CaidaMenu extends StatelessWidget {
                     child: Text('Formula',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, "SimuladorCaida"),
                     style: boton,
                     child: Text('Simulador',style: letra,)
                 ),
