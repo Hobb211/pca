@@ -3,10 +3,12 @@ import 'package:flutter/services.dart';
 import 'dart:math'as math;
 import 'dart:io';
 
+import 'package:pca/src/pages/fisica/caida%20libre/simulador.dart';
 
-double velocidad=0;
+
+int velocidad=0;
 int posicionI=0;
-double posicion=0;
+int posicion=0;
 
 
 class SimuladorMru extends StatefulWidget{
@@ -77,7 +79,7 @@ class _SimuladorMruState extends State<SimuladorMru> {
                   Divider(height: 20*scaleHeigth,),
                   Container(
                     width: 250*scaleWidth,
-                    child: Text("X0= $posicionI m",style: letra2,),
+                    child: Text("X0= $posicionI m\nV= $velocidad m/sg\nTiempo= $tiempo sg",style: letra2,),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
                     decoration: containers,
                   ),
@@ -103,6 +105,14 @@ class _SimuladorMruState extends State<SimuladorMru> {
                             child: Center(child:inputVelocidad()),
                             padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                           ),
+                          Divider(height:15*scaleHeigth),
+                          Container(
+                            decoration: containers,
+                            height: 60,
+                            width: 180,
+                            child: Center(child:inputTiempo()),
+                            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                          ),
                         ],
                       ),
                       VerticalDivider(width:50*scaleWidth ),
@@ -119,6 +129,7 @@ class _SimuladorMruState extends State<SimuladorMru> {
                               onTap: (){
                                 final isValid=formKey.currentState!.validate();
                                 if (isValid){
+                                  posicion=posicionI+velocidad*tiempo;
                                   _simulador(scaleHeigth);
                                 }
                               },
@@ -169,20 +180,31 @@ class _SimuladorMruState extends State<SimuladorMru> {
     return TextFormField(
       keyboardType: TextInputType.number,
       inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,LengthLimitingTextInputFormatter(10)],
-      validator: (value) {
-        if ( double.parse(value!) <= 37 && double.parse(value)>=20){
-          return null;
-        }
-        return '20<=V<=37';
-      },
       decoration: InputDecoration(
           icon: Image(image: AssetImage("assets/v.png"),height: 13,),
           hintText: "Velocidad"
       ),
-      onChanged: (value)=>setState(()=>velocidad=(double.parse(value))),
+      onChanged: (value)=>setState(()=>velocidad=(int.parse(value))),
     );
   }
 
+  Widget inputTiempo(){
+    return TextFormField(
+      keyboardType: TextInputType.number,
+      inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,LengthLimitingTextInputFormatter(10)],
+      validator: (value) {
+        if ( double.parse(value!)>=0){
+          return null;
+        }
+        return 'tiempo>=0';
+      },
+      decoration: InputDecoration(
+          icon: Icon(Icons.access_time,size: 20,),
+          hintText: "Tiempo"
+      ),
+      onChanged: (value)=>setState(()=>tiempo=(int.parse(value))),
+    );
+  }
 
   void _simulador(double scaleHeigth){
     showDialog(
@@ -207,19 +229,18 @@ class _SimuladorMruState extends State<SimuladorMru> {
                         ),
                         padding: EdgeInsets.all(20),
                         child: Text(
-                            "Y(t)=Y0+1/2*gt^2\n"
-                                "Vmax=${velocidad} m/sg"),
+                            "X(t)=X0+V*t\n"
+                            "X($tiempo)=${posicion} m"),
                       ),
                       Divider(height: 20*scaleHeigth,),
                       Container(
                           height: 240,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                            image: DecorationImage(image: AssetImage("assets/ciudad.jpg")),
+                            image: DecorationImage(image: AssetImage("assets/ciudad.gif")),
                           ),
                           child:  Center(child:Stack(children: [
-                            helicopteroAnimado(),
-                            regaloAnimado()
+                            autoAnimado()
                           ]
                           )
                           )
@@ -237,86 +258,14 @@ class _SimuladorMruState extends State<SimuladorMru> {
 }
 
 
-class helicopteroAnimado extends StatefulWidget {
+class autoAnimado extends StatefulWidget {
+
   @override
-  State<helicopteroAnimado> createState() => _helicopteroAnimado();
+  _autoAnimadaState createState() => _autoAnimadaState();
 }
 
-class _helicopteroAnimado extends State<helicopteroAnimado> with SingleTickerProviderStateMixin {
+class _autoAnimadaState extends State<autoAnimado> with SingleTickerProviderStateMixin{
   late AnimationController controller;
-
-  @override
-  void initState() {
-    controller= new AnimationController(
-        vsync: this,
-        duration: Duration(seconds:0)
-    );
-
-
-    controller.addListener(() {
-      setState(() {});
-      // if(controller.status==AnimationStatus.completed){
-      //   controller.reset();
-      // }
-
-    });
-
-    super.initState();
-
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    controller.forward();
-    return AnimatedBuilder(
-        animation: controller,
-        builder: (context,child){
-          return Transform.translate(
-              offset: Offset(0,-100),
-              child: _helicoptero()
-          );
-        }
-    );
-  }
-
-
-
-}
-
-class _helicoptero extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 20,
-      width: 30,
-      decoration: BoxDecoration(
-          color: Colors.grey,
-          borderRadius: BorderRadius.horizontal(left: Radius.circular(40))
-      ),
-    );
-  }
-}
-
-class regaloAnimado extends StatefulWidget {
-
-  @override
-  _RegaloAnimadaState createState() => _RegaloAnimadaState();
-}
-
-class _RegaloAnimadaState extends State<regaloAnimado> with SingleTickerProviderStateMixin{
-  late AnimationController controller;
-  late Animation<double> rotacion;
-  late Animation<double> horizontal;
-  late Animation<double> vertical;
-  late Animation<double> vertical2;
 
   @override
   void initState() {
@@ -349,8 +298,8 @@ class _RegaloAnimadaState extends State<regaloAnimado> with SingleTickerProvider
         animation: controller,
         builder: (context,child){
           return Transform.translate(
-              offset: Offset(0,0),
-              child:_regalo()
+              offset: Offset(0,72),
+              child:_auto()
           );
         }
     );
@@ -359,14 +308,14 @@ class _RegaloAnimadaState extends State<regaloAnimado> with SingleTickerProvider
 
 
 
-class _regalo extends StatelessWidget{
+class _auto extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
-      height: 15,
-      width: 15,
+      height: 60,
+      width: 60,
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/regalo.png"))
+          image: DecorationImage(image: AssetImage("assets/auto.png"))
       ),
     );
   }

@@ -4,13 +4,16 @@ import 'package:pca/src/pages/computacion/listas_menu.dart';
 import 'package:pca/src/pages/computacion/matrices_menu.dart';
 
 import 'package:pca/src/pages/computacion_page.dart';
+import 'package:pca/src/pages/fisica/caida%20libre/ejercicios.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/formulas.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/intro_caida.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/simulador.dart';
 import 'package:pca/src/pages/fisica/caida_menu.dart';
+import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/ejercicios.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/formulas.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/intro_proyectil.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/simulador.dart';
+import 'package:pca/src/pages/fisica/mru/ejercicios.dart';
 import 'package:pca/src/pages/fisica/mru/intro_mru.dart';
 import 'package:pca/src/pages/fisica/mru/mru.dart';
 import 'package:pca/src/pages/fisica/mru/mrua.dart';
@@ -62,15 +65,18 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'MRULeccion':(BuildContext context)=>MRULeccion(),
     'MRUALeccion':(BuildContext context)=>MRUALeccion(),
     'SimuladorMru':(BuildContext context)=>SimuladorMru(),
+    'EjerciciosMru':(BuildContext context)=>ejerciciosMRU(),
 
     //Proyectil
     'IntroProyectil':(BuildContext context)=>IntroProyectil(),
     'FormulasProyectil':(BuildContext context)=>FormulasProyectil(),
     'SimuladorProyectil':(BuildContext context)=>SimuladorProyectil(),
+    'EjerciciosProyectil':(BuildContext context)=>ejerciciosProyectil(),
 
     //Caida
     'IntroCaida':(BuildContext context)=>IntroCaida(),
     'FormulasCaida':(BuildContext context)=>FormulasCaida(),
-    'SimuladorCaida':(BuildContext context)=>SimuladorCaida()
+    'SimuladorCaida':(BuildContext context)=>SimuladorCaida(),
+    'EjerciciosCaida':(BuildContext context)=>ejerciciosCaida()
   };
 }

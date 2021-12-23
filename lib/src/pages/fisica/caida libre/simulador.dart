@@ -78,7 +78,7 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
                   Divider(height: 20*scaleHeigth,),
                   Container(
                     width: 250*scaleWidth,
-                    child: Text("X0= $posicionI m",style: letra2,),
+                    child: Text("Y0= $posicionI m",style: letra2,),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
                     decoration: containers,
                   ),
@@ -152,7 +152,7 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
       keyboardType: TextInputType.number,
       inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,LengthLimitingTextInputFormatter(10)],
       decoration: InputDecoration(
-          icon: Image(image: AssetImage("assets/x.png"),height: 13,),
+          icon: Image(image: AssetImage("assets/y.png"),height: 18,),
           hintText: "Posición"
       ),
       onChanged: (value)=>setState(()=>posicionI=(int.parse(value))),
@@ -276,11 +276,10 @@ class _helicoptero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 20,
-      width: 30,
+      height: 50,
+      width: 50,
       decoration: BoxDecoration(
-          color: Colors.grey,
-          borderRadius: BorderRadius.horizontal(left: Radius.circular(40))
+          image: DecorationImage(image: AssetImage("assets/helicoptero.png"))
       ),
     );
   }
@@ -331,7 +330,7 @@ class _RegaloAnimadaState extends State<regaloAnimado> with SingleTickerProvider
         animation: controller,
         builder: (context,child){
           return Transform.translate(
-            offset: Offset(0,vertical.value),
+            offset: Offset(10,vertical.value),
               child:_regalo()
           );
         }

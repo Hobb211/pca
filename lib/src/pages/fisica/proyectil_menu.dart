@@ -67,7 +67,7 @@ class ProyectilMenu extends StatelessWidget {
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, "EjerciciosProyectil"),
                 style: boton,
                 child: Text('Ejercicios',style: letra,)
             ),

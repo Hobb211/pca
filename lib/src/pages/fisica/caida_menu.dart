@@ -66,7 +66,7 @@ class CaidaMenu extends StatelessWidget {
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, "EjerciciosCaida"),
                 style: boton,
                 child: Text('Ejercicios',style: letra,)
             ),
