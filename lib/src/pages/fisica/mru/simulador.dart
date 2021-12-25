@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'dart:math'as math;
 import 'dart:io';
 
-import 'package:pca/src/pages/fisica/caida%20libre/simulador.dart';
 
 
+int tiempo=0;
 int velocidad=0;
 int posicionI=0;
 int posicion=0;

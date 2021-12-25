@@ -79,7 +79,7 @@ class MRUmenu extends StatelessWidget {
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, "DesafioMru"),
                     style: boton,
                     child: Text('Desafío\n  Final',style: letra,)
                 ),

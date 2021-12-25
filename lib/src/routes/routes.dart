@@ -13,6 +13,7 @@ import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/ejercicios.dar
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/formulas.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/intro_proyectil.dart';
 import 'package:pca/src/pages/fisica/lanzamiento%20de%20proyectil/simulador.dart';
+import 'package:pca/src/pages/fisica/mru/desafio.dart';
 import 'package:pca/src/pages/fisica/mru/ejercicios.dart';
 import 'package:pca/src/pages/fisica/mru/intro_mru.dart';
 import 'package:pca/src/pages/fisica/mru/mru.dart';
@@ -66,6 +67,7 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'MRUALeccion':(BuildContext context)=>MRUALeccion(),
     'SimuladorMru':(BuildContext context)=>SimuladorMru(),
     'EjerciciosMru':(BuildContext context)=>ejerciciosMRU(),
+    'DesafioMru':(BuildContext context)=>desafioMRU(),
 
     //Proyectil
     'IntroProyectil':(BuildContext context)=>IntroProyectil(),
