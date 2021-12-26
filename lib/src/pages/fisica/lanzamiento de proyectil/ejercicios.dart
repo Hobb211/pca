@@ -12,10 +12,10 @@ double respuestaP1A=velocidadP1*cos(anguloP1*pi/180)*(2*velocidadP1*sin(anguloP1
 int alturaP2=random.nextInt(100);
 int velocidadP2=random.nextInt(50);
 int anguloP2=random.nextInt(90)+1;
+double tiempoP2=random.nextInt(20)+1;
 double respuestaP2Ax=velocidadP2*cos(anguloP2);
 double respuestaP2Ay=velocidadP2*sin(anguloP2);
-double tiempoP2=(2*velocidadP1*sin(anguloP1*pi/180)/9.8);
-double alturaMaxP2=alturaP2+respuestaP2Ay-1/2*9.8*pow(tiempoP2,2);
+double alturaMaxP2=alturaP2+respuestaP2Ay*tiempoP2-1/2*9.8*pow(tiempoP2,2);
 double respuestaP2D=respuestaP2Ax*tiempoP2;
 
 
@@ -56,12 +56,12 @@ class ejerciciosProyectil extends StatelessWidget{
                 children: <Widget>[
                   ElevatedButton(
                       style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                      onPressed:()=>Navigator.pushNamed(context, "Proyectil"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(
                     width: 250,
-                    child: Text("Introducción",style: letra,),
+                    child: Text("Ejercicios",style: letra,),
                     padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -86,7 +86,7 @@ class ejerciciosProyectil extends StatelessWidget{
                       children: <Widget>[
                         Divider(height: 100,),
                         ElevatedButton(
-                          onPressed: ()=>Navigator.pushNamed(context, "MRULeccion"),
+                          onPressed: ()=>Navigator.pushNamed(context, "DesafioProyectil"),
                           child: Icon(Icons.arrow_forward_ios),
                           style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                         ),
@@ -130,16 +130,15 @@ class ejerciciosProyectil extends StatelessWidget{
       ),
       child: Text("2.Desde un edificio de $alturaP2 [m] de altura se lanza"
           " un proyectil, con una velocidad inicial de $velocidadP2 [m/s]"
-          "formando un ángulo de ${anguloP2}° con la horizontal. Determine:"
+          "formando un ángulo de ${anguloP2}° con la horizontal y se mantiene "
+          "en el aire por ${tiempoP2} sg. Determine:"
           "\na) Las componentes ortogonales de la velocidad inicial"
-          "\nb) El tiempo de vuelo del proyectil"
-          "\nc) La altura máxima alcanzada por el proyectil"
-          "\nd) El alcance del proyectil"
+          "\nb) La altura máxima alcanzada por el proyectil"
+          "\nc) El alcance del proyectil"
           "\n(a. V0x= ${respuestaP2Ax.toStringAsPrecision(4)}m/sg "
           "V0y=${respuestaP2Ay.toStringAsPrecision(4)}m/sg"
-          "\nb. t=${tiempoP2.toStringAsPrecision(3)}sg"
-          "\nc. Ymax=${alturaMaxP2.toStringAsPrecision(5)}m"
-          "\nd. Xmax=${respuestaP2D.toStringAsPrecision(5)}m)",style: letraP,),
+          "\nb. Ymax=${alturaMaxP2.toStringAsPrecision(5)}m"
+          "\nc. Xmax=${respuestaP2D.toStringAsPrecision(5)}m)",style: letraP,),
     );
   }
 

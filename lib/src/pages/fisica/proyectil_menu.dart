@@ -73,7 +73,7 @@ class ProyectilMenu extends StatelessWidget {
             ),
             Divider(),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, "DesafioProyectil"),
                 style: boton,
                 child: Text('Desafío\n   Final',style: letra,)
             ),

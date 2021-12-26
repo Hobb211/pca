@@ -52,12 +52,12 @@ class ejerciciosCaida extends StatelessWidget{
                 children: <Widget>[
                   ElevatedButton(
                       style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                      onPressed:()=>Navigator.pushNamed(context, "Caida"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(
                     width: 250,
-                    child: Text("Introducción",style: letra,),
+                    child: Text("Ejercicios",style: letra,),
                     padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

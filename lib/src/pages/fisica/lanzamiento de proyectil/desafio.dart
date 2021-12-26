@@ -7,8 +7,12 @@ Random random=Random();
 int puntaje=1;
 String resultado="";
 //pregunta 1
-int distanciaP1=random.nextInt(1000)+1;
-double respuestaP1=distanciaP1*4;
+int alturaP1=random.nextInt(490)+10;
+int velocidadP1=random.nextInt(50)+1;
+int anguloP1=random.nextInt(90)+1;
+double velocidady=velocidadP1*sin(anguloP1*pi/180);
+double tiempoP1max=velocidady/9.8;
+double respuestaP1=alturaP1+velocidady*tiempoP1max-1/2*9.8*pow(tiempoP1max,2);
 String R1='';
 String RP1='C';
 double P1A=respuestaP1 * (random.nextInt(5)+1)+1;
@@ -16,9 +20,11 @@ double P1B=(respuestaP1/(random.nextInt(5)+2));
 double P1C=respuestaP1;
 double P1D=respuestaP1 +random.nextInt(100);
 //pregunta 2
-double velocidadP2=343.2;
-int tiempoP2=random.nextInt(50);
-double respuestaP2=velocidadP2*tiempoP2/1000;
+int velocidadP2=random.nextInt(50)+1;
+int anguloP2=random.nextInt(90)+1;
+double tiempoP2=random.nextInt(30)+1;
+double velocidadP2x=velocidadP2*cos(anguloP2*pi/180);
+double respuestaP2=velocidadP2x*tiempoP2;
 String R2='';
 String RP2='B';
 double P2A=respuestaP2 * (random.nextInt(5)+1)+1;
@@ -26,20 +32,19 @@ double P2B=respuestaP2;
 double P2C=(respuestaP2/(random.nextInt(5)+2));
 double P2D=respuestaP2 +random.nextInt(100);
 //pregunta 3
-int aceleracionP3=random.nextInt(200);
-int tiempoP3=random.nextInt(50);
-int respuestaP3=aceleracionP3*tiempoP3;
+int velocidadP3=random.nextInt(200);
+int anguloP3=random.nextInt(90)+1;
+double respuestaP3=2*velocidadP3*sin(anguloP3*pi/180)/9.8;
 String R3='';
 String RP3='D';
-int P3A=respuestaP3 * (random.nextInt(5)+1)+1;
-int P3B=respuestaP3 +random.nextInt(100);
-double P3C=(respuestaP3-(random.nextInt(20)+2));
-int P3D=respuestaP3;
+double P3A=respuestaP3 * (random.nextInt(5)+1)+1;
+double P3B=respuestaP3 +random.nextInt(100);
+double P3C=(respuestaP3/(random.nextInt(5)+2));
+double P3D=respuestaP3;
 //pregunta 4
 int velocidadP4=random.nextInt(1000);
-int tiempoP4=random.nextInt(50);
-int velocidadP4F=random.nextInt(80);
-double respuestaP4=(velocidadP4F-velocidadP4)/tiempoP4;
+int anguloP4=random.nextInt(90)+1;
+double respuestaP4=velocidadP4*cos(anguloP4*pi/180);
 String R4='';
 String RP4='A';
 double P4A=respuestaP4;
@@ -47,9 +52,9 @@ double P4B=respuestaP4 +random.nextInt(100);
 double P4C=(respuestaP4/(random.nextInt(5)+2));
 double P4D=respuestaP4 * (random.nextInt(5)+1)+1;
 //pregunta 5
-int aceleracionP5=random.nextInt(200);
-int tiempoP5=random.nextInt(50);
-double respuestaP5=1/2*aceleracionP5*pow(tiempoP5, 2);
+int velocidadP5=random.nextInt(200);
+int anguloP5=random.nextInt(90)+1;
+double respuestaP5=velocidadP5*sin(anguloP5*pi/180);
 String R5='';
 String RP5='D';
 double P5A=respuestaP5 * (random.nextInt(5)+1)+1;
@@ -58,10 +63,9 @@ double P5C=(respuestaP5/(random.nextInt(20)+2));
 double P5D=respuestaP5;
 //pregunta 6
 int velocidadP6=random.nextInt(1000);
-int tiempoP6=random.nextInt(50);
-int velocidadP6F=random.nextInt(80);
-double aceleracionP6=(velocidadP6F-velocidadP6)/tiempoP6;
-double respuestaP6=velocidadP6*tiempoP6+1/2*aceleracionP6*pow(tiempoP6, 2);
+int anguloP6=random.nextInt(90)+1;
+double tiempoP6=2*velocidadP6*sin(anguloP6*pi/180)/9.8;
+double respuestaP6=velocidadP6*sin(anguloP6*pi/180)*tiempoP6/2-1/2*9.8*pow(tiempoP6/2, 2);
 String R6='';
 String RP6='A';
 double P6A=respuestaP6;
@@ -73,12 +77,12 @@ BoxDecoration container=BoxDecoration(borderRadius: BorderRadius.circular(10), c
 
 TextStyle letraP=TextStyle();
 
-class desafioMRU extends StatefulWidget{
+class desafioProyectil extends StatefulWidget{
   @override
-  State<desafioMRU> createState() => _desafioMRUState();
+  State<desafioProyectil> createState() => _desafioProyectilState();
 }
 
-class _desafioMRUState extends State<desafioMRU> {
+class _desafioProyectilState extends State<desafioProyectil> {
   final letra=TextStyle(fontSize: 26,);
 
   final letra2=TextStyle(fontSize: 22,);
@@ -118,7 +122,7 @@ class _desafioMRUState extends State<desafioMRU> {
                   children: <Widget>[
                     ElevatedButton(
                         style: boton,
-                        onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                        onPressed:()=>Navigator.pushNamed(context, "Proyectil"),
                         child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                     ),
                     Container(
@@ -160,8 +164,6 @@ class _desafioMRUState extends State<desafioMRU> {
                     final isValid=formKey.currentState!.validate();
                     if (isValid){
                       puntaje=1;
-                      print("$R1 $RP1\n$R2 $RP2"
-                          "\n$R3 $RP3\n$R4 $RP4");
                       if(R1.toUpperCase()==RP1) {puntaje += 1;};
                       if(R2.toUpperCase()==RP2) {puntaje += 1;};
                       if(R3.toUpperCase()==RP3) {puntaje += 1;};
@@ -186,15 +188,16 @@ class _desafioMRUState extends State<desafioMRU> {
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height/4-20,
+          height: MediaQuery.of(context).size.height/3-60,
           width: MediaQuery.of(context).size.width-50,
           padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("1.¿A qué velocidad debe circular un auto de carreras"
-              " para recorrer $distanciaP1 km en un cuarto de hora? ",style: letraP,),
+          child: Text("1.Se lanza una pelota desde un techo a ${alturaP1}m de altura"
+              ", con una V0 de ${velocidadP1}m/s y un ángulo de ${anguloP1}°"
+              " ¿Cual es su altura máxima?",style: letraP,),
         ),
         Divider(),
         Container(
@@ -205,7 +208,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("a) ${P1A.toStringAsPrecision(5)} Km/H",style: letraP,),
+          child: Text("a) ${P1A.toStringAsPrecision(5)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -216,7 +219,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("b) ${P1B.toStringAsPrecision(5)} Km/H",style: letraP,),
+          child: Text("b) ${P1B.toStringAsPrecision(5)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -227,7 +230,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("c) ${P1C} Km/H",style: letraP,),
+          child: Text("c) ${P1C.toStringAsPrecision(5)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -238,7 +241,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("d) ${P1D.toStringAsPrecision(5)} Km/H",style: letraP,),
+          child: Text("d) ${P1D.toStringAsPrecision(5)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -265,16 +268,18 @@ class _desafioMRUState extends State<desafioMRU> {
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height/3-30,
+          height: MediaQuery.of(context).size.height/3,
           width: MediaQuery.of(context).size.width-50,
           padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("2. Sabiendo que la velocidad del sonido es de $velocidadP2 m/s,"
-              " ¿a cuántos kilómetros de distancia se produce un trueno que tarda $tiempoP2 "
-              "segundos en oírse? ",style: letraP,),
+          child: Text("2.Se lanza una pelota desde un techo con una V0 de"
+              " ${velocidadP2}m/s, un ángulo de ${anguloP2}° y toca el "
+              "suelo luego de $tiempoP2 sg"
+              " ¿Cual es la distancia recorrida desde el cañon hasta que el proyectil "
+              "toca el suelo?",style: letraP,),
         ),
         Divider(),
         Container(
@@ -285,7 +290,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("a) ${P2A.toStringAsPrecision(4)} Km",style: letraP,),
+          child: Text("a) ${P2A.toStringAsPrecision(4)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -296,7 +301,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("b) ${P2B.toStringAsPrecision(4)} Km",style: letraP,),
+          child: Text("b) ${P2B.toStringAsPrecision(4)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -307,7 +312,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("c) ${P2C.toStringAsPrecision(4)} Km",style: letraP,),
+          child: Text("c) ${P2C.toStringAsPrecision(4)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -318,7 +323,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("d) ${P2D.toStringAsPrecision(4)} Km",style: letraP,),
+          child: Text("d) ${P2D.toStringAsPrecision(4)} m",style: letraP,),
         ),
         Divider(),
         Container(
@@ -352,9 +357,9 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("3. Un cuerpo se mueve, partiendo del reposo, con"
-              " una aceleración constante de $aceleracionP3 m/sg^2. ¿Cual es la"
-              " velocidad que tiene al cabo de $tiempoP3 sg? ",style: letraP,),
+          child: Text("3. Se dispara un proyectil con una velocidad de $velocidadP3 m/sg"
+              " y un angulo de ${anguloP3}° ¿Cuanto tiempo se mantiene el proyectil en el aire? "
+            ,style: letraP,),
         ),
         Divider(),
         Container(
@@ -365,7 +370,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("a) ${P3A.toStringAsPrecision(5)} m/sg",style: letraP,),
+          child: Text("a) ${P3A.toStringAsPrecision(4)} sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -376,7 +381,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("b) ${P3B.toStringAsPrecision(5)} m/sg",style: letraP,),
+          child: Text("b) ${P3B.toStringAsPrecision(4)} sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -387,7 +392,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("c) ${P3C.toStringAsPrecision(5)} m/sg",style: letraP,),
+          child: Text("c) ${P3C.toStringAsPrecision(4)} sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -398,7 +403,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("d) ${P3D.toStringAsPrecision(5)} m/sg",style: letraP,),
+          child: Text("d) ${P3D.toStringAsPrecision(4)} sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -425,16 +430,15 @@ class _desafioMRUState extends State<desafioMRU> {
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height/3-30,
+          height: MediaQuery.of(context).size.height/4-20,
           width: MediaQuery.of(context).size.width-50,
           padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("4. Un automóvil que marcha a una velocidad de $velocidadP4 m/sg, "
-              "aplica los frenos y al cabo de $tiempoP4 segundos su velocidad se ha "
-              "reducido a $velocidadP4F m/sg. ¿Cual es la aceleración?.",style: letraP,),
+          child: Text("4. Se dispara un proyectil con una velocidad de $velocidadP4 m/sg"
+              " y un angulo de ${anguloP4}° ¿Cual es la velocidad en el eje x? ",style: letraP,),
         ),
         Divider(),
         Container(
@@ -445,7 +449,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("a) ${P4A.toStringAsPrecision(4)} m/sg^2",style: letraP,),
+          child: Text("a) ${P4A.toStringAsPrecision(4)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -456,7 +460,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("b) ${P4B.toStringAsPrecision(4)} m/sg^2",style: letraP,),
+          child: Text("b) ${P4B.toStringAsPrecision(4)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -467,7 +471,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("c) ${P4C.toStringAsPrecision(4)} m/sg^2",style: letraP,),
+          child: Text("c) ${P4C.toStringAsPrecision(4)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -478,7 +482,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("d) ${P4D.toStringAsPrecision(4)} m/sg^2",style: letraP,),
+          child: Text("d) ${P4D.toStringAsPrecision(4)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -505,16 +509,15 @@ class _desafioMRUState extends State<desafioMRU> {
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height/4+50,
+          height: MediaQuery.of(context).size.height/5+20,
           width: MediaQuery.of(context).size.width-50,
           padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("5. Un cuerpo se mueve, partiendo del reposo, con"
-              " una aceleración constante de $aceleracionP5 m/sg^2. ¿Cual es la"
-              " distancia recorrida, desde el reposo, luego de $tiempoP5 segundos?",style: letraP,),
+          child: Text("5. Se dispara un proyectil con una velocidad de $velocidadP5 m/sg"
+              " y un angulo de ${anguloP5}° ¿Cual es la velocidad en el eje y?",style: letraP,),
         ),
         Divider(),
         Container(
@@ -525,7 +528,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("a) ${P5A.toStringAsPrecision(6)} m",style: letraP,),
+          child: Text("a) ${P5A.toStringAsPrecision(6)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -536,7 +539,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("b) ${P5B.toStringAsPrecision(6)} m",style: letraP,),
+          child: Text("b) ${P5B.toStringAsPrecision(6)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -547,7 +550,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("c) ${P5C.toStringAsPrecision(6)} m",style: letraP,),
+          child: Text("c) ${P5C.toStringAsPrecision(6)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -558,7 +561,7 @@ class _desafioMRUState extends State<desafioMRU> {
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("d) ${P5D.toStringAsPrecision(6)} m",style: letraP,),
+          child: Text("d) ${P5D.toStringAsPrecision(6)} m/sg",style: letraP,),
         ),
         Divider(),
         Container(
@@ -585,17 +588,15 @@ class _desafioMRUState extends State<desafioMRU> {
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height/3+20,
+          height: MediaQuery.of(context).size.height/5+20,
           width: MediaQuery.of(context).size.width-50,
           padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Color(0xFFDCD6D6),
           ),
-          child: Text("6. Un automóvil que marcha a una velocidad de $velocidadP6 m/sg, "
-              "aplica los frenos y al cabo de $tiempoP6 segundos su velocidad se ha "
-              "reducido a $velocidadP6F m/sg. ¿Cual es la distancia recorrida"
-              " luego de $tiempoP6 segundos?",style: letraP,),
+          child: Text("6. Se dispara un proyectil con una velocidad de $velocidadP6 m/sg"
+              " y un angulo de ${anguloP6}° ¿Cual es la altura maxima?",style: letraP,),
         ),
         Divider(),
         Container(
@@ -673,47 +674,47 @@ class _desafioMRUState extends State<desafioMRU> {
             height: MediaQuery.of(context).size.height*2/3-50,
             child: SingleChildScrollView(
               child:Column(
-                    children: [
-                      Container(
-                        decoration: container,
-                        height: MediaQuery.of(context).size.height/10,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.all(20),
-                        child: Center(child:Text("Resultados",style: TextStyle(fontSize: 26),)),
-                      ),
-                      Divider(),
-                      Container(
-                        decoration: container,
-                        height: MediaQuery.of(context).size.height/10,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.all(20),
-                        child: Center(child:Text("Puntaje: ${puntaje-1}/6 Nota: $puntaje",style: TextStyle(fontSize: 20),)),
-                      ),
-                      Divider(),
-                      Container(
-                        decoration: container,
-                        height: MediaQuery.of(context).size.height/10,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.all(20),
-                        child: Center(child:Text("Respuestas",style: TextStyle(fontSize: 26),)),
-                      ),
-                      Divider(),
-                      Container(
-                        decoration: container,
-                        height: MediaQuery.of(context).size.height/4,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.all(20),
-                        child: Center(child:
-                            Text("1. ${respuestaP1.toStringAsPrecision(5)} m/sg\n"
-                                "2. ${respuestaP2.toStringAsPrecision(5)} Km\n"
-                                "3. ${respuestaP3.toStringAsPrecision(5)} m/sg\n"
-                                "4. ${respuestaP4.toStringAsPrecision(5)} m/sg^2\n"
-                                "5. ${respuestaP5.toStringAsPrecision(5)} m\n"
-                                "6. ${respuestaP6.toStringAsPrecision(5)} m",style: TextStyle(fontSize: 20)),
-                        ),
-                      ),
-                    ],
+                children: [
+                  Container(
+                    decoration: container,
+                    height: MediaQuery.of(context).size.height/10,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.all(20),
+                    child: Center(child:Text("Resultados",style: TextStyle(fontSize: 26),)),
                   ),
+                  Divider(),
+                  Container(
+                    decoration: container,
+                    height: MediaQuery.of(context).size.height/10,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.all(20),
+                    child: Center(child:Text("Puntaje: ${puntaje-1}/6 Nota: $puntaje",style: TextStyle(fontSize: 20),)),
+                  ),
+                  Divider(),
+                  Container(
+                    decoration: container,
+                    height: MediaQuery.of(context).size.height/10,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.all(20),
+                    child: Center(child:Text("Respuestas",style: TextStyle(fontSize: 26),)),
+                  ),
+                  Divider(),
+                  Container(
+                    decoration: container,
+                    height: MediaQuery.of(context).size.height/4,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.all(20),
+                    child: Center(child:
+                    Text("1. ${respuestaP1.toStringAsPrecision(5)} m\n"
+                        "2. ${respuestaP2.toStringAsPrecision(5)} m\n"
+                        "3. ${respuestaP3.toStringAsPrecision(5)} sg\n"
+                        "4. ${respuestaP4.toStringAsPrecision(5)} m/sg\n"
+                        "5. ${respuestaP5.toStringAsPrecision(5)} m/sg\n"
+                        "6. ${respuestaP6.toStringAsPrecision(5)} sg",style: TextStyle(fontSize: 20)),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
