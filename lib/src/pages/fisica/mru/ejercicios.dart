@@ -58,14 +58,13 @@ class ejerciciosMRU extends StatelessWidget{
               Divider(height: 60,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                  InkWell(
+                      onTap:()=>Navigator.pushNamed(context, "MRU"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(
                     width: 250,
-                    child: Text("Introducción",style: letra,),
+                    child: Center(child: Text("Ejercicios",style: letra,)),
                     padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -89,14 +88,24 @@ class ejerciciosMRU extends StatelessWidget{
                       onTap: ()=>_profe(context),
                       child: Image(image: AssetImage("assets/BLABLA.png"),height: 210,)
                   ),
-                  VerticalDivider(width: 110,),
+                  VerticalDivider(width: 50,),
                   Column(
                       children: <Widget>[
                         Divider(height: 100,),
-                        ElevatedButton(
-                          onPressed: ()=>Navigator.pushNamed(context, "MRULeccion"),
-                          child: Icon(Icons.arrow_forward_ios),
-                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: ()=>Navigator.pushNamed(context, "SimuladorMru"),
+                              child: Icon(Icons.arrow_back_ios_sharp),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                            ),
+                            VerticalDivider(width: 10,),
+                            ElevatedButton(
+                              onPressed: ()=>Navigator.pushNamed(context, "DesafioMru"),
+                              child: Icon(Icons.arrow_forward_ios),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                            ),
+                          ],
                         ),
                       ]
                   )

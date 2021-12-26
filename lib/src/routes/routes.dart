@@ -4,6 +4,7 @@ import 'package:pca/src/pages/computacion/listas_menu.dart';
 import 'package:pca/src/pages/computacion/matrices_menu.dart';
 
 import 'package:pca/src/pages/computacion_page.dart';
+import 'package:pca/src/pages/fisica/caida%20libre/desafio.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/ejercicios.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/formulas.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/intro_caida.dart';
@@ -81,6 +82,7 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'IntroCaida':(BuildContext context)=>IntroCaida(),
     'FormulasCaida':(BuildContext context)=>FormulasCaida(),
     'SimuladorCaida':(BuildContext context)=>SimuladorCaida(),
-    'EjerciciosCaida':(BuildContext context)=>ejerciciosCaida()
+    'EjerciciosCaida':(BuildContext context)=>ejerciciosCaida(),
+    'DesafioCaida':(BuildContext context)=>desafioCaida(),
   };
 }

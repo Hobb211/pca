@@ -17,21 +17,21 @@ class MRUALeccion extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background.gif"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Divider(height: 60,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                  InkWell(
+                      onTap:()=>Navigator.pushNamed(context, "MRU"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(
@@ -188,9 +188,8 @@ class MRUALeccion extends StatelessWidget{
               Divider(height: 0,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed: ()=>_profe(context),
+                  InkWell(
+                      onTap: ()=>_profe(context),
                       child: Image(image: AssetImage("assets/profe_1.png"),height: 210,)
                   ),
                   Column(
@@ -212,7 +211,7 @@ class MRUALeccion extends StatelessWidget{
                                   ),
                                   VerticalDivider(width: 10,),
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "MRUALeccion"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "SimuladorMru"),
                                     child: Icon(Icons.arrow_forward_ios),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),

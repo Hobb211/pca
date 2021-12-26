@@ -9,6 +9,7 @@ int tiempo=0;
 int velocidad=0;
 int posicionI=0;
 int posicion=0;
+TextStyle letra2=TextStyle();
 
 
 class SimuladorMru extends StatefulWidget{
@@ -43,7 +44,7 @@ class _SimuladorMruState extends State<SimuladorMru> {
     final scaleWidth=screenWidth/widthBase;
     final scaleHeigth=screenHeigth/heigthBase;
     final letra=TextStyle(fontSize: 26*scaleWidth,);
-    final letra2=TextStyle(fontSize: 16*scaleWidth,);
+    letra2=TextStyle(fontSize: 24*scaleWidth,);
 
 
     return Scaffold(
@@ -63,9 +64,8 @@ class _SimuladorMruState extends State<SimuladorMru> {
                   Divider(height: 60*scaleHeigth,),
                   Row(
                     children: <Widget>[
-                      ElevatedButton(
-                          style: boton,
-                          onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                      InkWell(
+                          onTap:()=>Navigator.pushNamed(context, "MRU"),
                           child: Image(image: AssetImage("assets/arrow.png"),height: 50*scaleHeigth,)
                       ),
                       Container(
@@ -76,14 +76,15 @@ class _SimuladorMruState extends State<SimuladorMru> {
                       )
                     ],
                   ),
-                  Divider(height: 20*scaleHeigth,),
+                  Divider(height: 40*scaleHeigth,),
                   Container(
-                    width: 250*scaleWidth,
-                    child: Text("X0= $posicionI m\nV= $velocidad m/sg\nTiempo= $tiempo sg",style: letra2,),
+                    height: 180*scaleHeigth,
+                    width: 280*scaleWidth,
+                    child: Center(child: Text("X0= $posicionI m\nV= $velocidad m/sg\nTiempo= $tiempo sg",style: letra2,)),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
                     decoration: containers,
                   ),
-                  Divider(height: 15*scaleHeigth,),
+                  Divider(height: 40*scaleHeigth,),
                   Row(
                     children: <Widget>[
                       VerticalDivider(width:20*scaleWidth ,),
@@ -138,13 +139,13 @@ class _SimuladorMruState extends State<SimuladorMru> {
                             Row(
                                 children: <Widget>[
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "IntroProyectil"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "MRUALeccion"),
                                     child: Icon(Icons.arrow_back_ios_sharp),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
                                   VerticalDivider(width: 10*scaleWidth,),
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "FormulasProyectil"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "EjerciciosMru"),
                                     child: Icon(Icons.arrow_forward_ios),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
@@ -215,9 +216,9 @@ class _SimuladorMruState extends State<SimuladorMru> {
             backgroundColor: Color(0xFF38B000),
             content: SingleChildScrollView(
               child: Container(
-                height: MediaQuery.of(context).size.height/2+30,
+                height: MediaQuery.of(context).size.height/2+10,
                 width: MediaQuery.of(context).size.width,
-                child: Center(
+                child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
                       Container(
@@ -227,12 +228,14 @@ class _SimuladorMruState extends State<SimuladorMru> {
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xFFDCD6D6),
                         ),
-                        padding: EdgeInsets.all(20),
-                        child: Text(
-                            "X(t)=X0+V*t\n"
-                            "X($tiempo)=${posicion} m"),
+                        padding: EdgeInsets.all(10),
+                        child: Center(
+                          child: Text(
+                              "X(t)=X0+V*t\n"
+                              "X($tiempo)=${posicion} m",style: letra2,),
+                        ),
                       ),
-                      Divider(height: 20*scaleHeigth,),
+                      Divider(height: 10*scaleHeigth,),
                       Container(
                           height: 240,
                           width: MediaQuery.of(context).size.width,

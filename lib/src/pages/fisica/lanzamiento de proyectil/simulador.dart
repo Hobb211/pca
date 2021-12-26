@@ -44,7 +44,7 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
     final scaleWidth=screenWidth/widthBase;
     final scaleHeigth=screenHeigth/heigthBase;
     final letra=TextStyle(fontSize: 26*scaleWidth,);
-    final letra2=TextStyle(fontSize: 16*scaleWidth,);
+    final letra2=TextStyle(fontSize: 26*scaleWidth,);
 
 
     return Scaffold(
@@ -64,9 +64,8 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                   Divider(height: 60*scaleHeigth,),
                   Row(
                     children: <Widget>[
-                      ElevatedButton(
-                          style: boton,
-                          onPressed:()=>Navigator.pushNamed(context, "Proyectil"),
+                      InkWell(
+                          onTap:()=>Navigator.pushNamed(context, "Proyectil"),
                           child: Image(image: AssetImage("assets/arrow.png"),height: 50*scaleHeigth,)
                       ),
                       Container(
@@ -77,14 +76,15 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                       )
                     ],
                   ),
-                  Divider(height: 20*scaleHeigth,),
+                  Divider(height: 40*scaleHeigth,),
                   Container(
-                    width: 250*scaleWidth,
-                    child: Text("X0= $posicionI m\nV0= $velocidad m/sg\na°= $angulo",style: letra2,),
+                    height: 180*scaleHeigth,
+                    width: 280*scaleWidth,
+                    child: Center(child: Text("X0= $posicionI m\nV0= $velocidad m/sg\na°= $angulo",style: letra2,)),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
                     decoration: containers,
                   ),
-                  Divider(height: 15*scaleHeigth,),
+                  Divider(height: 40*scaleHeigth,),
                   Row(
                     children: <Widget>[
                       VerticalDivider(width:20*scaleWidth ,),
@@ -138,13 +138,13 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
                             Row(
                                 children: <Widget>[
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "IntroProyectil"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "FormulasProyectil"),
                                     child: Icon(Icons.arrow_back_ios_sharp),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
                                   VerticalDivider(width: 10*scaleWidth,),
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "FormulasProyectil"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "EjerciciosProyectil"),
                                     child: Icon(Icons.arrow_forward_ios),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
@@ -196,12 +196,6 @@ class _SimuladorProyectilState extends State<SimuladorProyectil> {
     return TextFormField(
       keyboardType: TextInputType.number,
       inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly,LengthLimitingTextInputFormatter(10)],
-      validator: (value) {
-        if ( double.parse(value!) <= 37 && double.parse(value)>=20){
-          return null;
-        }
-        return '20<=V<=37';
-      },
       decoration: InputDecoration(
           icon: Image(image: AssetImage("assets/v.png"),height: 13,),
           hintText: "Velocidad"
@@ -283,7 +277,7 @@ class _canonAnimadoState extends State<canonAnimado> with SingleTickerProviderSt
       duration: Duration(seconds:0)
     );
 
-    rotacion=Tween(begin: 0.0,end: -(angulo*math.pi/180)).animate(controller);
+    rotacion=Tween(begin: 0.0,end: -1.0).animate(controller);
 
     controller.addListener(() {
       setState(() {});
@@ -311,7 +305,7 @@ class _canonAnimadoState extends State<canonAnimado> with SingleTickerProviderSt
         animation: controller,
         builder: (context,child){
           return Transform.translate(
-            offset: Offset(-115,80),
+            offset: Offset(-102,80),
             child: Transform.rotate(
               angle: rotacion.value,
               child:_canon()

@@ -21,6 +21,7 @@ class IntroCaida extends StatelessWidget{
 
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background.gif"),
@@ -32,7 +33,7 @@ class IntroCaida extends StatelessWidget{
           bottom: false,
           left: false,
           right: false,
-          child:  Center(
+          child:  SingleChildScrollView(
             child: Column(
               children: <Widget>[
                 Divider(height: 8,),

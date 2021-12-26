@@ -54,9 +54,8 @@ class ejerciciosProyectil extends StatelessWidget{
               Divider(height: 60,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "Proyectil"),
+                  InkWell(
+                      onTap:()=>Navigator.pushNamed(context, "Proyectil"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(
@@ -81,14 +80,24 @@ class ejerciciosProyectil extends StatelessWidget{
                       onTap: ()=>_profe(context),
                       child: Image(image: AssetImage("assets/BLABLA.png"),height: 210,)
                   ),
-                  VerticalDivider(width: 110,),
+                  VerticalDivider(width: 50,),
                   Column(
                       children: <Widget>[
                         Divider(height: 100,),
-                        ElevatedButton(
-                          onPressed: ()=>Navigator.pushNamed(context, "DesafioProyectil"),
-                          child: Icon(Icons.arrow_forward_ios),
-                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: ()=>Navigator.pushNamed(context, "SimuladorProyectil"),
+                              child: Icon(Icons.arrow_back_ios_sharp),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                            ),
+                            VerticalDivider(width: 10*scaleWidth,),
+                            ElevatedButton(
+                              onPressed: ()=>Navigator.pushNamed(context, "DesafioProyectil"),
+                              child: Icon(Icons.arrow_forward_ios),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                            ),
+                          ],
                         ),
                       ]
                   )
@@ -103,7 +112,7 @@ class ejerciciosProyectil extends StatelessWidget{
 
   Widget pregunta1(BuildContext context){
     return Container(
-      height: MediaQuery.of(context).size.height/3+40,
+      height: MediaQuery.of(context).size.height/3+70,
       width: MediaQuery.of(context).size.width-50,
       padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
       decoration: BoxDecoration(
@@ -121,7 +130,7 @@ class ejerciciosProyectil extends StatelessWidget{
 
   Widget pregunta2(BuildContext context){
     return Container(
-      height: MediaQuery.of(context).size.height/2+180,
+      height: MediaQuery.of(context).size.height/2+130,
       width: MediaQuery.of(context).size.width-50,
       padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
       decoration: BoxDecoration(

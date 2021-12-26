@@ -8,6 +8,7 @@ int velocidad=0;
 int posicionI=0;
 double posicion=0;
 int tiempo=0;
+TextStyle letra2=TextStyle();
 
 
 class SimuladorCaida extends StatefulWidget{
@@ -42,7 +43,7 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
     final scaleWidth=screenWidth/widthBase;
     final scaleHeigth=screenHeigth/heigthBase;
     final letra=TextStyle(fontSize: 26*scaleWidth,);
-    final letra2=TextStyle(fontSize: 16*scaleWidth,);
+    letra2=TextStyle(fontSize: 26*scaleWidth,);
 
 
     return Scaffold(
@@ -59,12 +60,11 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
             child:SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  Divider(height: 60*scaleHeigth,),
+                  Divider(height: 70*scaleHeigth,),
                   Row(
                     children: <Widget>[
-                      ElevatedButton(
-                          style: boton,
-                          onPressed:()=>Navigator.pushNamed(context, "Caida"),
+                      InkWell(
+                          onTap:()=>Navigator.pushNamed(context, "Caida"),
                           child: Image(image: AssetImage("assets/arrow.png"),height: 50*scaleHeigth,)
                       ),
                       Container(
@@ -75,14 +75,15 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
                       )
                     ],
                   ),
-                  Divider(height: 20*scaleHeigth,),
+                  Divider(height: 40*scaleHeigth,),
                   Container(
-                    width: 250*scaleWidth,
-                    child: Text("Y0= $posicionI m",style: letra2,),
+                    height: 100*scaleHeigth,
+                    width: 280*scaleWidth,
+                    child: Center(child: Text("Y0= $posicionI m",style: letra2,)),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
                     decoration: containers,
                   ),
-                  Divider(height: 15*scaleHeigth,),
+                  Divider(height: 40*scaleHeigth,),
                   Row(
                     children: <Widget>[
                       VerticalDivider(width:20*scaleWidth ,),
@@ -121,13 +122,13 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
                             Row(
                                 children: <Widget>[
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "IntroProyectil"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "FormulasCaida"),
                                     child: Icon(Icons.arrow_back_ios_sharp),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
                                   VerticalDivider(width: 10*scaleWidth,),
                                   ElevatedButton(
-                                    onPressed: ()=>Navigator.pushNamed(context, "FormulasProyectil"),
+                                    onPressed: ()=>Navigator.pushNamed(context, "EjerciciosCaida"),
                                     child: Icon(Icons.arrow_forward_ios),
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                   ),
@@ -176,20 +177,23 @@ class _SimuladorCaidaState extends State<SimuladorCaida> {
               child: Container(
                   height: MediaQuery.of(context).size.height/2+30,
                   width: MediaQuery.of(context).size.width,
-                  child: Center(
+                  child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
                         Container(
-                          height: 160*scaleHeigth,
+                          height: 170*scaleHeigth,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Color(0xFFDCD6D6),
                           ),
                           padding: EdgeInsets.all(20),
-                          child: Text(
-                              "Y(t)=Y0+1/2*gt^2\n"
-                              "Vmax=${velocidad} m/sg  \nt= $tiempo sg"),
+                          child: Center(
+                            child: Text(
+                                "Y(t)=Y0+1/2*gt^2\n"
+                                "Vmax=${velocidad} m/sg  \nt= $tiempo sg",
+                              style: letra2,),
+                          ),
                         ),
                         Divider(height: 20*scaleHeigth,),
                         Container(

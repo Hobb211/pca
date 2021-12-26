@@ -13,21 +13,21 @@ class IntroMRU extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background.gif"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Divider(height: 60,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                    style: boton,
-                    onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                  InkWell(
+                    onTap:()=>Navigator.pushNamed(context, "MRU"),
                     child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(

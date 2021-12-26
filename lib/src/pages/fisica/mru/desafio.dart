@@ -116,9 +116,8 @@ class _desafioMRUState extends State<desafioMRU> {
                 Divider(height: 60,),
                 Row(
                   children: <Widget>[
-                    ElevatedButton(
-                        style: boton,
-                        onPressed:()=>Navigator.pushNamed(context, "MRU"),
+                    InkWell(
+                        onTap:()=>Navigator.pushNamed(context, "MRU"),
                         child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                     ),
                     Container(
@@ -168,7 +167,7 @@ class _desafioMRUState extends State<desafioMRU> {
                       if(R4.toUpperCase()==RP4) {puntaje += 1;};
                       if(R5.toUpperCase()==RP5) {puntaje += 1;};
                       if(R6.toUpperCase()==RP6) {puntaje += 1;};
-                      if(puntaje>4){resultado="Aprobado";}else{resultado="Reprobado";}
+                      if(puntaje>=4){resultado="Aprobado";}else{resultado="Reprobado";}
                       _resultado(context);
                     }
                   },

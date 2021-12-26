@@ -50,9 +50,8 @@ class ejerciciosCaida extends StatelessWidget{
               Divider(height: 60,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "Caida"),
+                  InkWell(
+                      onTap:()=>Navigator.pushNamed(context, "Caida"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50,)
                   ),
                   Container(
@@ -79,14 +78,24 @@ class ejerciciosCaida extends StatelessWidget{
                       onTap: ()=>_profe(context),
                       child: Image(image: AssetImage("assets/BLABLA.png"),height: 210,)
                   ),
-                  VerticalDivider(width: 110,),
+                  VerticalDivider(width: 50,),
                   Column(
                       children: <Widget>[
                         Divider(height: 100,),
-                        ElevatedButton(
-                          onPressed: ()=>Navigator.pushNamed(context, "MRULeccion"),
-                          child: Icon(Icons.arrow_forward_ios),
-                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: ()=>Navigator.pushNamed(context, "SimuladorCaida"),
+                              child: Icon(Icons.arrow_back_ios_sharp),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                            ),
+                            VerticalDivider(width: 10*scaleWidth,),
+                            ElevatedButton(
+                              onPressed: ()=>Navigator.pushNamed(context, "DesafioCaida"),
+                              child: Icon(Icons.arrow_forward_ios),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
+                            ),
+                          ],
                         ),
                       ]
                   )

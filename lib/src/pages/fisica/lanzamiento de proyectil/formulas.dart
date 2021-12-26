@@ -24,21 +24,21 @@ class FormulasProyectil extends StatelessWidget{
 
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background.gif"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Divider(height: 60*scaleHeigth,),
               Row(
                 children: <Widget>[
-                  ElevatedButton(
-                      style: boton,
-                      onPressed:()=>Navigator.pushNamed(context, "Proyectil"),
+                  InkWell(
+                      onTap:()=>Navigator.pushNamed(context, "Proyectil"),
                       child: Image(image: AssetImage("assets/arrow.png"),height: 50*scaleHeigth,)
                   ),
                   Container(
@@ -224,7 +224,7 @@ class FormulasProyectil extends StatelessWidget{
                               ),
                               VerticalDivider(width: 10*scaleWidth,),
                               ElevatedButton(
-                                onPressed: ()=>Navigator.pushNamed(context, "FormulasProyectil"),
+                                onPressed: ()=>Navigator.pushNamed(context, "SimuladorProyectil"),
                                 child: Icon(Icons.arrow_forward_ios),
                                 style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                               ),

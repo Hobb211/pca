@@ -20,6 +20,7 @@ class FormulasCaida extends StatelessWidget{
 
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background.gif"),
@@ -31,7 +32,7 @@ class FormulasCaida extends StatelessWidget{
           bottom: false,
           left: false,
           right: false,
-          child:  Center(
+          child:  SingleChildScrollView(
             child: Column(
               children: <Widget>[
                 Divider(height: scaleHeigth*8,),
@@ -145,7 +146,7 @@ class FormulasCaida extends StatelessWidget{
                                 ),
                                 VerticalDivider(width: 10,),
                                 ElevatedButton(
-                                  onPressed: ()=>Navigator.pushNamed(context, "FormulasCaida"),
+                                  onPressed: ()=>Navigator.pushNamed(context, "SimuladorCaida"),
                                   child: Icon(Icons.arrow_forward_ios),
                                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF38B000))),
                                 ),
