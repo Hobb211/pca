@@ -46,7 +46,7 @@ class CurvasMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed:()=>Navigator.pushNamed(context, 'IntroCurvas'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,19 +54,19 @@ class CurvasMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'QueEsUnaCurva'),
                     style: boton,
                     child: Text('   ¿Que\n  es una\ncurva de\n   nivel?',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'UsoCurvas'),
                     style: boton,
                     child: Text('¿Cual es\nsu uso?',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'CalculoCurvas'),
                 style: boton,
                 child: Text('  Calculo\nde Curvas\n  de nivel',style: letra,)
             ),
@@ -74,19 +74,19 @@ class CurvasMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'EjerciciosCurvas'),
                     style: boton,
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'EjemploCurvas'),
                     style: boton,
                     child: Text('Ejemplos',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'DesafioCurvas'),
                 style: boton,
                 child: Text('Desafío\n   Final',style: letra,)
             ),

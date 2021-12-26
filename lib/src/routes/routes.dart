@@ -26,8 +26,29 @@ import 'package:pca/src/pages/fisica/proyectil_menu.dart';
 import 'package:pca/src/pages/fisica_Page.dart';
 import 'package:pca/src/pages/home_page.dart';
 import 'package:pca/src/pages/loading_page.dart';
+import 'package:pca/src/pages/matematicas/curvas/calculo_curvas.dart';
+import 'package:pca/src/pages/matematicas/curvas/desafio_curvas.dart';
+import 'package:pca/src/pages/matematicas/curvas/ejemplos_curvas.dart';
+import 'package:pca/src/pages/matematicas/curvas/ejercicios_curvas.dart';
+import 'package:pca/src/pages/matematicas/curvas/introduccion_curvas.dart';
+import 'package:pca/src/pages/matematicas/curvas/que_esunacurva.dart';
+import 'package:pca/src/pages/matematicas/curvas/resueltos_curvas.dart';
+import 'package:pca/src/pages/matematicas/curvas/uso_curvas.dart';
 import 'package:pca/src/pages/matematicas/curvas_menu.dart';
+import 'package:pca/src/pages/matematicas/edo/desafio.dart';
+import 'package:pca/src/pages/matematicas/edo/ecuacionesh.dart';
+import 'package:pca/src/pages/matematicas/edo/ecuacionesl.dart';
+import 'package:pca/src/pages/matematicas/edo/ejercicios_edo.dart';
+import 'package:pca/src/pages/matematicas/edo/introduccion.dart';
+import 'package:pca/src/pages/matematicas/edo/separacion_variables.dart';
 import 'package:pca/src/pages/matematicas/edo_menu.dart';
+import 'package:pca/src/pages/matematicas/limites/desafio_limites.dart';
+import 'package:pca/src/pages/matematicas/limites/ejemplos_limites.dart';
+import 'package:pca/src/pages/matematicas/limites/ejercicios_limites.dart';
+import 'package:pca/src/pages/matematicas/limites/introduccion_limites.dart';
+import 'package:pca/src/pages/matematicas/limites/limite_indeterminados.dart';
+import 'package:pca/src/pages/matematicas/limites/que_esunlimite.dart';
+import 'package:pca/src/pages/matematicas/limites/uso_limites.dart';
 import 'package:pca/src/pages/matematicas/limites_menu.dart';
 import 'package:pca/src/pages/matematicas_page.dart';
 import 'package:pca/src/pages/quimica/Configuracion/desafios_co.dart';
@@ -127,5 +148,35 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'Metalico':(BuildContext context)=>metalico(),
     'Ejercicios_en':(BuildContext context)=>ejercicios_en(),
     'desafios_en':(BuildContext context)=>desafios_en(),
+
+    //Ecuaciones Diferenciales
+    'IntroEdo':(BuildContext context) =>IntroEdo(),
+    'SeparacionVariables':(BuildContext context) =>SeparacionVariables(),
+    'EcuacionesHomogeneas':(BuildContext context) =>EcuacionesHomogeneas(),
+    'EcuacionesLineales':(BuildContext context) =>EcuacionesLineales(),
+    'EjerciciosEdo':(BuildContext context) =>ejercicios_edo(),
+    'DesafioEdo':(BuildContext context) =>desafioEdo(),
+
+
+    //Limites
+    'IntroLimites':(BuildContext context) => IntroLimites(),
+    'Limites1':(BuildContext context) => Limites1(),
+    'UsoLimite':(BuildContext context) => UsoLimite(),
+    'LimiteIndeterminado':(BuildContext context) =>LimiteIndeterminado(),
+    'ejemplosLimites':(BuildContext context) =>ejemplosLimites(),
+    'EjercicioLimites':(BuildContext context) => ejercicio_limite(),
+    'Desafio_Limites':(BuildContext context) => desafio_limites(),
+
+
+
+    //Curvas
+    'IntroCurvas':(BuildContext context) => IntroCurvas(),
+    'QueEsUnaCurva':(BuildContext context) => QueEsUnaCurva(),
+    'UsoCurvas':(BuildContext context) => UsoCurvas(),
+    'CalculoCurvas':(BuildContext context) => CalculoCurvas(),
+    'EjemploCurvas':(BuildContext context) => ejemplos_curvas(),
+    'EjerciciosCurvas':(BuildContext context) => EjerciciosCurvas(),
+    'ResueltosCurvas':(BuildContext context) => resueltos_curvas(),
+    'DesafioCurvas':(BuildContext context) => desafioCurvas(),
   };
 }

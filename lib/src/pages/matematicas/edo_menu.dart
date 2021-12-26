@@ -46,7 +46,7 @@ class EdoMenu extends StatelessWidget {
           children: [
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'IntroEdo'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,19 +54,19 @@ class EdoMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed:  ()=>Navigator.pushNamed(context, 'SeparacionVariables'),
                     style: boton,
                     child: Text(' Separación\nde variables',style: letra2,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed:  ()=>Navigator.pushNamed(context, 'EcuacionesHomogeneas'),
                     style: boton,
                     child: Text('  Ecuaciones\nHomogeneas',style: letra2,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed:  ()=>Navigator.pushNamed(context, 'EcuacionesLineales'),
                 style: boton,
                 child: Text('Ecuaciones\n   lineales',style: letra2,)
             ),
@@ -74,12 +74,12 @@ class EdoMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'EjerciciosEdo'),
                     style: boton,
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'DesafioEdo'),
                     style: boton,
                     child: Text(' Desafío\n    Final',style: letra,)
                 ),

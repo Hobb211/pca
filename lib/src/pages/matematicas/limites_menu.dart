@@ -46,7 +46,7 @@ class LimitesMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed:()=>Navigator.pushNamed(context, 'IntroLimites'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,19 +54,19 @@ class LimitesMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'Limites1'),
                     style: boton,
                     child: Text('¿Que es \n     un\n  límite?',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'UsoLimite'),
                     style: boton,
                     child: Text('¿Cual es \n  su uso?',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed:()=>Navigator.pushNamed(context, 'LimiteIndeterminado'),
                 style: boton,
                 child: Text('          Límites\nIndeterminados',style: TextStyle(fontSize: 18),)
             ),
@@ -74,19 +74,19 @@ class LimitesMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'EjercicioLimites'),
                     style: boton,
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed:()=>Navigator.pushNamed(context, 'ejemplosLimites'),
                     style: boton,
                     child: Text(' Ejemplos\nde límites',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'Desafio_Limites'),
                 style: boton,
                 child: Text('Desafío\n   Final',style: letra,)
             ),
