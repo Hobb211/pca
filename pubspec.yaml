@@ -78,6 +78,35 @@ flutter:
      - assets/y.png
      - assets/helicoptero.png
      - assets/auto.png
+     - assets/covalente.jpg
+     - assets/ionico.jpg
+     - assets/metalico.jpg
+     - assets/atomo.gif
+     - assets/diagramalewis.png
+     - assets/tablageomo.png
+     - assets/lineal.jpg
+     - assets/bipiramide.jpg
+     - assets/octahedral.jpg
+     - assets/piramietrigonal.jpg
+     - assets/planatrigonal.jpg
+     - assets/tetraedrica.jpg
+     - assets/nivelesatomo.jpg
+     - assets/moller.jpg
+     - assets/notacion.jpg
+     - assets/moleculas.png
+     - assets/BLABLA_.png
+     - assets/profe_1_.png
+     - assets/PIENSA_.png
+     - assets/profe_2_.png
+     - assets/habla_.png
+     - assets/becl2.png
+     - assets/lewisbecl2.png
+     - assets/geometriabecl22.png
+     - assets/sf6.png
+     - assets/lewissf6.png
+     - assets/geometriasf6.png
+     - assets/oxigeno.png
+     - assets/desafio_co.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

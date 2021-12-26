@@ -47,7 +47,7 @@ class ConfiguracionEMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'IntroConfiguracion'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -55,19 +55,19 @@ class ConfiguracionEMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'EstructuraAtomo'),
                     style: boton,
                     child: Text('Estructura\ndel Atomo',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'DiagramaMoller'),
                     style: boton,
                     child: Text('Diagrama\n       de\n   Moller',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'NotacionCuantica'),
                 style: boton,
                 child: Text('Notación\nCuantica',style: letra,)
             ),
@@ -75,12 +75,12 @@ class ConfiguracionEMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'ejercicios_co'),
                     style: boton,
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'desafios_co'),
                     style: boton,
                     child: Text('Desafío\n  Final',style: letra,)
                 ),

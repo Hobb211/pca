@@ -30,6 +30,24 @@ import 'package:pca/src/pages/matematicas/curvas_menu.dart';
 import 'package:pca/src/pages/matematicas/edo_menu.dart';
 import 'package:pca/src/pages/matematicas/limites_menu.dart';
 import 'package:pca/src/pages/matematicas_page.dart';
+import 'package:pca/src/pages/quimica/Configuracion/desafios_co.dart';
+import 'package:pca/src/pages/quimica/Configuracion/diagrama_moller.dart';
+import 'package:pca/src/pages/quimica/Configuracion/ejercicios_co.dart';
+import 'package:pca/src/pages/quimica/Configuracion/estructura_atomo.dart';
+import 'package:pca/src/pages/quimica/Configuracion/intro_configuracion.dart';
+import 'package:pca/src/pages/quimica/Configuracion/notacion_cuantica.dart';
+import 'package:pca/src/pages/quimica/Enlace/covalente.dart';
+import 'package:pca/src/pages/quimica/Enlace/desafios.dart';
+import 'package:pca/src/pages/quimica/Enlace/ejercicios_en.dart';
+import 'package:pca/src/pages/quimica/Enlace/intro_enlace.dart';
+import 'package:pca/src/pages/quimica/Enlace/ionico.dart';
+import 'package:pca/src/pages/quimica/Enlace/metalico.dart';
+import 'package:pca/src/pages/quimica/Estructura/desafio_es.dart';
+import 'package:pca/src/pages/quimica/Estructura/ejercicios_es.dart';
+import 'package:pca/src/pages/quimica/Estructura/geometria_molecular.dart';
+import 'package:pca/src/pages/quimica/Estructura/intro_estructura.dart';
+import 'package:pca/src/pages/quimica/Estructura/lewis.dart';
+import 'package:pca/src/pages/quimica/Estructura/tabla_molecular.dart';
 import 'package:pca/src/pages/quimica/configuracionE_menu.dart';
 import 'package:pca/src/pages/quimica/enlaceQ_menu.dart';
 import 'package:pca/src/pages/quimica/estructuraM_menu.dart';
@@ -84,5 +102,30 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'SimuladorCaida':(BuildContext context)=>SimuladorCaida(),
     'EjerciciosCaida':(BuildContext context)=>ejerciciosCaida(),
     'DesafioCaida':(BuildContext context)=>desafioCaida(),
+
+    //Estructura Molecular
+    'IntroEstructura':(BuildContext context)=>IntroEstructura(),
+    'DiagramaLewis':(BuildContext context)=>DiagramaLewis(),
+    'TablaMolecular':(BuildContext context)=>TablaMolecular(),
+    'GeometriaMolecular':(BuildContext context)=>GeometriaMolecular(),
+    'ejercicios_es':(BuildContext context)=>ejercicios_es(),
+    'desafios_es':(BuildContext context)=>desafios_es(),
+
+    //Configuracion Electronica
+    'IntroConfiguracion':(BuildContext context)=>IntroConfiguracion(),
+    'EstructuraAtomo':(BuildContext context)=>EstructuraAtomo(),
+    'DiagramaMoller':(BuildContext context)=>DiagramaMoller(),
+    'NotacionCuantica':(BuildContext context)=>NotacionCuantica(),
+    'ejercicios_co':(BuildContext context)=>ejercicios_co(),
+    'desafios_co':(BuildContext context)=>desafios_co(),
+
+
+    //Enlaces Quimicos
+    'introEnlace':(BuildContext context)=>IntroEnlace(),
+    'Covalente':(BuildContext context)=>covalente(),
+    'Ionico':(BuildContext context)=>ionico(),
+    'Metalico':(BuildContext context)=>metalico(),
+    'Ejercicios_en':(BuildContext context)=>ejercicios_en(),
+    'desafios_en':(BuildContext context)=>desafios_en(),
   };
 }

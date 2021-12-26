@@ -46,7 +46,7 @@ class EnlaceQMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'introEnlace'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,19 +54,19 @@ class EnlaceQMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'Covalente'),
                     style: boton,
                     child: Text('    Enlace\nCovalente',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'Ionico'),
                     style: boton,
                     child: Text('Enlace\nIonico',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context, 'Metalico'),
                 style: boton,
                 child: Text('  Enlace\nMetalico',style: letra,)
             ),
@@ -74,12 +74,12 @@ class EnlaceQMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'Ejercicios_en'),
                     style: boton,
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context, 'desafios_en'),
                     style: boton,
                     child: Text('Desafío\n  Final',style: letra,)
                 ),
