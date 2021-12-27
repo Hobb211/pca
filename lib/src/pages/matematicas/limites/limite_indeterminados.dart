@@ -46,7 +46,7 @@ class LimiteIndeterminado extends StatelessWidget{
                     VerticalDivider(width: 10,),
                     Container(
                       width: scaleWidth*250,
-                      child: Text("Limites Indeterminados",style: letra,),
+                      child: Text("Límites Indeterminados",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: scaleHeigth*20,vertical: scaleWidth*10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

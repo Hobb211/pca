@@ -195,7 +195,7 @@ class _desafioCurvasState extends State<desafioCurvas> {
           child: Row(
             children: [
 
-              Text("c).  ",style: letraP,),
+              Text("c)      ",style: letraP,),
               Image(image: AssetImage('assets/desafio Ejercicio1C.png'),width: MediaQuery.of(context).size.width/2,)
             ]
             

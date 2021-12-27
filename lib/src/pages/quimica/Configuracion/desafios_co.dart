@@ -36,7 +36,7 @@ class desafios_co extends StatelessWidget{
                       ),
                       Container(
                         width: 250,
-                        child: Text("Desafios",style: letra,),
+                        child: Text("Desafíos",style: letra,),
                         padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -99,7 +99,7 @@ class desafios_co extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Mediante el uso del diagrama de möller escribe la configuracion electronica de cada uno de estos elementos",
+      "Mediante el uso del diagrama de möller escribe la configuración electrónica de cada uno de estos elementos",
       style: TextStyle(
           fontSize: 23
       ),

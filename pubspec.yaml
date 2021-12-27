@@ -66,6 +66,7 @@ flutter:
      - assets/profe_1.png
      - assets/PIENSA.png
      - assets/profe_2.png
+     - assets/profe_3.png
      - assets/habla.png
      - assets/home.png
      - assets/x.png
@@ -171,6 +172,41 @@ flutter:
      - assets/basura7.png
      - assets/basura8.png
      - assets/basura9.png
+     - assets/ex_py.png
+     - assets/equipos.png
+     - assets/example_python.png
+     - assets/java_print.png
+     - assets/python_print.png
+     - assets/matriz_random.png
+     - assets/random_code.png
+     - assets/matriz_java.png
+     - assets/get_index.png
+     - assets/suma_python.png
+     - assets/print_ex.png
+     - assets/matriz_ex.png
+     - assets/matriz_ex2.png
+     - assets/habla.png
+     - assets/print_ex2.png
+     - assets/nor.png
+     - assets/or.png
+     - assets/and.png
+     - assets/nand.png
+     - assets/xor.png
+     - assets/xnor.png
+     - assets/not_logic.png
+     - assets/not_gate.png
+     - assets/logic_example.png
+     - assets/logic_exercise.png
+     - assets/logic_exercise2.png
+     - assets/logic_final.png
+     - assets/double_list.png
+     - assets/linked_list.png
+     - assets/nodo.png
+     - assets/reco_list.png
+     - assets/delete_list.png
+     - assets/delete_value.png
+     - assets/insert_list.png
+     - assets/insert_first.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

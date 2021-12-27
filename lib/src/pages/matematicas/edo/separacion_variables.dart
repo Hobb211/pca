@@ -45,7 +45,7 @@ class SeparacionVariables extends StatelessWidget{
                     VerticalDivider(width: 30,),
                     Container(
                       width: scaleWidth*250,
-                      child: Text("Separacion de variables",style: letra,),
+                      child: Text("Separación de variables",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: scaleHeigth*45,vertical: scaleWidth*20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -140,7 +140,7 @@ class SeparacionVariables extends StatelessWidget{
   }
    Text texto2(double scale){
     return Text(
-      "Un ejemplo de una ecuacion que se puede realizar por metodo de separacion de variables"
+      "Un ejemplo de una ecuación que se puede realizar por método de separación de variables"
        ,
       style: TextStyle(
           fontSize: (24*scale)

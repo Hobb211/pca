@@ -46,7 +46,7 @@ class CompuertasMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,"IntroCompuertas"),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,43 +54,61 @@ class CompuertasMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"PuertaLogica"),
                     style: boton,
-                    child: Text('¿Que es \n    una\n puerta\n  logica?',style: letra,)
+                    child: Text('¿Qué es \n    una\n puerta\n  lógica?',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"TiposPuertas"),
                     style: boton,
-                    child: Text('Tipos de\n puertas\n  logicas',style: letra,)
+                    child: Text('Tipos de\n puertas\n  lógicas',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,"TiposPuertas2"),
                 style: boton,
-                child: Text('Tipos de\n puertas\nlogicas 2',style: letra,)
+                child: Text('Tipos de\n puertas\nlógicas 2',style: letra,)
+            ),
+            Divider(height:20),
+            ElevatedButton(
+                onPressed: ()=>Navigator.pushNamed(context,"TiposPuertas3"),
+                style: boton,
+                child: Text('Tipos de\n puertas\nlógicas 3',style: letra,)
+            ),
+            Divider(height: 20),
+            ElevatedButton(
+                onPressed: ()=>Navigator.pushNamed(context,"TiposPuertas4"),
+                style: boton,
+                child: Text('Tipos de\n puertas\nlógicas 4',style: letra,)
+            ),
+            Divider(height: 20),
+            ElevatedButton(
+                onPressed: ()=>Navigator.pushNamed(context,"Ejemplo"),
+                style: boton,
+                child: Text('Ejemplo',style: letra,)
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"EjerciciosC"),
                     style: boton,
                     child: Text('Ejercicios',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"EjerciciosC2"),
                     style: boton,
-                    child: Text('Simulador',style: letra,)
+                    child: Text('Ejercicios\n 2',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,"DesafioFinalC"),
                 style: boton,
                 child: Text('Desafío\n   Final',style: letra,)
             ),
-            Divider(height: 30,),
+
           ],
         ),
       ),

@@ -61,14 +61,14 @@ class EnlaceQMenu extends StatelessWidget {
                 ElevatedButton(
                     onPressed: ()=>Navigator.pushNamed(context, 'Ionico'),
                     style: boton,
-                    child: Text('Enlace\nIonico',style: letra,)
+                    child: Text('Enlace\nIónico',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
                 onPressed: ()=>Navigator.pushNamed(context, 'Metalico'),
                 style: boton,
-                child: Text('  Enlace\nMetalico',style: letra,)
+                child: Text('  Enlace\nMetálico',style: letra,)
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

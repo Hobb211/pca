@@ -36,7 +36,7 @@ class desafios_es extends StatelessWidget{
                     ),
                     Container(
                       width: 250,
-                      child: Text("Desafios",style: letra,),
+                      child: Text("Desafíos",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -235,7 +235,7 @@ class desafios_es extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Desafia tu intelecto resuelve los siguientes ejercicios\na) Estructura de lewis mediantes electrones de su maximo nivel de orbital.\nb) Calcular cuantos electrones pares total, enlazados y no enlazados existes en la molecula.\nc) Nombrar y identificar Geometria molecular.",
+      "Desafía tu intelecto resuelve los siguientes ejercicios\na) Estructura de lewis mediantes electrones de su máximo nivel de orbital.\nb) Calcular cuantos electrones pares total, enlazados y no enlazados existes en la molecula.\nc) Nombrar y identificar Geometria molecular.",
       style: TextStyle(
           fontSize: 21
       ),

@@ -46,7 +46,7 @@ class CalculoCurvas extends StatelessWidget{
                     VerticalDivider(width: 10,),
                     Container(
                       width: scaleWidth*250,
-                      child: Text("Calculo de la curvas de nivel",style: letra,),
+                      child: Text("Cálculo de la curvas de nivel",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: scaleHeigth*20,vertical: scaleWidth*10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -134,7 +134,7 @@ class CalculoCurvas extends StatelessWidget{
 
   Text texto(double scale){
     return Text(
-      " Notacion: Nk(f)={(x, y) en  IR2 / f(x, y)=k }.."
+      " Notación: Nk(f)={(x, y) en  IR2 / f(x, y)=k }.."
        ,
       style: TextStyle(
           fontSize: (24*scale)

@@ -45,7 +45,7 @@ class EcuacionesHomogeneas extends StatelessWidget{
                     VerticalDivider(width: 30,),
                     Container(
                       width: scaleWidth*250,
-                      child: Text("Ecuaciones Homogeneas",style: letra,),
+                      child: Text("Ecuaciones Homogéneas",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: scaleHeigth*45,vertical: scaleWidth*20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -123,7 +123,7 @@ class EcuacionesHomogeneas extends StatelessWidget{
 
   Text texto(double scale){
     return Text(
-      "Una ecuación diferencial puede ser homogenea en dos aspectos: cuando los coeficientes de los términos diferenciales en el caso del primer orden son funciones homogeneas de las variables; o para el caso lienal de cualquier orden cuando no existen los términos constantes."
+      "Una ecuación diferencial puede ser homogénea en dos aspectos: cuando los coeficientes de los términos diferenciales en el caso del primer orden son funciones homogéneas de las variables; o para el caso lineal de cualquier orden cuando no existen los términos constantes."
        ,
       style: TextStyle(
           fontSize: (24*scale)

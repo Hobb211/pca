@@ -49,7 +49,7 @@ class NotacionCuantica extends StatelessWidget {
                         Container(
                           width: 250,
                           child: Text(
-                            "Notación Cuantica",
+                            "Notación Cuántica",
                             style: letra,
                           ),
                           padding: EdgeInsets.symmetric(
@@ -160,7 +160,7 @@ class NotacionCuantica extends StatelessWidget {
             width: 100,
             child: Text(
               "Si mal no recuerdo el subnivel:\n s lleva hasta 2\n p lleva hasta 6\n d lleva hasta 10\nf lleva hasta 14\nQUE PERFECTA MEMORIA!!!\n"
-              "Te sera util ser como yo memorizando mas adelante",
+              "Te sera útil ser como yo memorizando mas adelante",
               style: TextStyle(fontSize: 15),
             ),
           ),

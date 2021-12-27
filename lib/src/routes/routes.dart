@@ -1,8 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/DesafioFinalC.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/Ejemplo.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/EjerciciosC.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/EjerciciosC2.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/Puerta_Logica.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/Tipos_Puertas.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/Tipos_Puertas2.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/Tipos_Puertas3.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/Tipos_Puertas4.dart';
+import 'package:pca/src/pages/computacion/compuertas%20logicas/intro_compuertas.dart';
 import 'package:pca/src/pages/computacion/compuertas_menu.dart';
+import 'package:pca/src/pages/computacion/listas/Ejercicios.dart';
+import 'package:pca/src/pages/computacion/listas/Ejercicios_2.dart';
+import 'package:pca/src/pages/computacion/listas/Final.dart';
+import 'package:pca/src/pages/computacion/listas/Funcion_Ldoble.dart';
+import 'package:pca/src/pages/computacion/listas/Lista_Doble.dart';
+import 'package:pca/src/pages/computacion/listas/Lista_Enlazada.dart';
+import 'package:pca/src/pages/computacion/listas/Lista_Python.dart';
+import 'package:pca/src/pages/computacion/listas/Nodo.dart';
+import 'package:pca/src/pages/computacion/listas/intro_listas.dart';
 import 'package:pca/src/pages/computacion/listas_menu.dart';
+import 'package:pca/src/pages/computacion/matrices/Arreglos.dart';
+import 'package:pca/src/pages/computacion/matrices/creando_matriz.dart';
+import 'package:pca/src/pages/computacion/matrices/desafio_final.dart';
+import 'package:pca/src/pages/computacion/matrices/ex1.dart';
+import 'package:pca/src/pages/computacion/matrices/exe2.dart';
+import 'package:pca/src/pages/computacion/matrices/intro_matrices.dart';
+import 'package:pca/src/pages/computacion/matrices/matriz.dart';
+import 'package:pca/src/pages/computacion/matrices/matriz_Java.dart';
+import 'package:pca/src/pages/computacion/matrices/matriz_Python.dart';
+import 'package:pca/src/pages/computacion/matrices/matrizpy_continue.dart';
 import 'package:pca/src/pages/computacion/matrices_menu.dart';
-
 import 'package:pca/src/pages/computacion_page.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/desafio.dart';
 import 'package:pca/src/pages/fisica/caida%20libre/ejercicios.dart';
@@ -178,5 +206,40 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'EjerciciosCurvas':(BuildContext context) => EjerciciosCurvas(),
     'ResueltosCurvas':(BuildContext context) => resueltos_curvas(),
     'DesafioCurvas':(BuildContext context) => desafioCurvas(),
+
+    //Matrices
+    'IntroMatrices':(BuildContext context)=>IntroMatrices(),
+    'Arreglos':(BuildContext context)=>Arreglos(),
+    'Matriz':(BuildContext context) =>Matriz(),
+    'MatrizJava':(BuildContext context)=>MatrizJava(),
+    'CreandoMatriz':(BuildContext context)=>CreandoMatriz(),
+    'MatrizPython':(BuildContext context)=>MatrizPython(),
+    'MatrizPythonC':(BuildContext context)=>MatrizPythonC(),
+    'EjerciciosM':(BuildContext context)=>EjerciciosM(),
+    'EjerciciosM2':(BuildContext context)=>EjerciciosM2(),
+    'DesafioFinalM':(BuildContext context)=>DesafioFinalM(),
+
+    //Compuertas
+    'IntroCompuertas':(BuildContext context)=>IntroCompuertas(),
+    'PuertaLogica':(BuildContext context)=>PuertaLogica(),
+    'TiposPuertas':(BuildContext context) =>TiposPuertas(),
+    'TiposPuertas2':(BuildContext context) =>TiposPuertas2(),
+    'TiposPuertas3':(BuildContext context) =>TiposPuertas3(),
+    'TiposPuertas4':(BuildContext context) =>TiposPuertas4(),
+    'Ejemplo': (BuildContext context) =>Ejemplo(),
+    'EjerciciosC':(BuildContext context) => EjerciciosC(),
+    'EjerciciosC2':(BuildContext context) => EjerciciosC2(),
+    'DesafioFinalC':(BuildContext context) => DesafioFinalC(),
+
+    //Listas
+    'IntroListas':(BuildContext context)=>IntroListas(),
+    'Nodo':(BuildContext context)=>Nodo(),
+    'ListaEnlazada':(BuildContext context) =>ListaEnlazada(),
+    'ListaDoble':(BuildContext context) =>ListaDoble(),
+    'FuncionListaD': (BuildContext context) =>FuncionListaD(),
+    'ListaPython':(BuildContext context) =>ListaPython(),
+    'EjerciciosL':(BuildContext context) => EjerciciosL(),
+    'EjerciciosL2':(BuildContext context) => EjerciciosL2(),
+    'DesafioFinalL':(BuildContext context) => DesafioFinalL(),
   };
 }

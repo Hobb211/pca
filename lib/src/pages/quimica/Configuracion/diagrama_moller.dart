@@ -143,7 +143,7 @@ class DiagramaMoller extends StatelessWidget {
 
   Text texto() {
     return Text(
-      "Este diagrama nos ayudara para expresar la notacion cuantica del elemento cada sub nivel tiene una letra, dicha letra puede llevar una cantidad maxima de electrones suena complicado "
+      "Este diagrama nos ayudara para expresar la notación cuántica del elemento, cada subnivel tiene una letra, dicha letra puede llevar una cantidad máxima de electrones, suena complicado "
       "pero es bastante simple... la corriente de los electrones la indican las flechas de la imagen desde 1s hasta 7f.",
       style: TextStyle(fontSize: 17.5),
     );

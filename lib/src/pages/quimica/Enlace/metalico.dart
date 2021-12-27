@@ -36,7 +36,7 @@ class metalico extends StatelessWidget{
                   ),
                   Container(
                     width: 250,
-                    child: Text("Enlace Metalico",style: letra,),
+                    child: Text("Enlace Metálico",style: letra,),
                     padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -113,7 +113,7 @@ class metalico extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Se encuentran en los metales sólidos como el cobre, el hierro y el"
+      "Se encuentran en los metales sólidos como el cobre, el hierro y el "
         "aluminio. En los metales, cada átomo está unido a varios átomos vecinos.",
       style: TextStyle(
           fontSize: 22

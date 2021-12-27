@@ -114,8 +114,8 @@ class DiagramaLewis extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Interesante diagrama no crees...para poder hacerlo debes tener su N° cuantico y sumar los electrones del ultimo nivel mas alto como se ve en la imagen por ej "
-          "cloruro el nivel mas alto es 3 pero hay 2 subniveles que lo tienen S y P por eso sumamos sus electrones 2+6=8, esto representa los electrones que dibujaremos.",
+      "Interesante diagrama ¿no crees?...para poder hacerlo debes tener su N° cuántico y sumar los electrones del último nivel mas alto como se ve en la imagen, por ej: "
+          "cloruro el nivel mas alto es 3 pero hay 2 subniveles que lo contienen, S y P por eso sumamos sus electrones 2+6=8, esto representa los electrones que dibujarémos.",
       style: TextStyle(
           fontSize: 17
       ),

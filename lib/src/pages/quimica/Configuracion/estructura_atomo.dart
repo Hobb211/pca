@@ -124,8 +124,8 @@ class EstructuraAtomo extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Como seguro vieron es sus colegios el atomo consta de un nucle donde se encuentran los protones y neutrones rodeados con"
-          " orbitales por donde trancitan los electrones estos amigos se ubicaran en ellos de forma diferente segun el elemento.",
+      "Como seguro vieron es sus colegios el átomo consta de un núcleo donde se encuentran los protones y neutrones rodeados con"
+          " orbitales por donde transitan los electrones, estos amigos se ubicaran en ellos de forma diferente segun el elemento.",
       style: TextStyle(
           fontSize: 17.5
       ),

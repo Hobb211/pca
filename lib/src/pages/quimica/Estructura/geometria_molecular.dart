@@ -124,7 +124,7 @@ class GeometriaMolecular extends StatelessWidget{
   Text texto(){
     return Text(
       "Estas son las formas que pueden tomar los elementos al "
-          "tranformase en moleculas segun sus enlaces, espero que esta ayuda visual te lo facilite al estudiar.",
+          "transformase en moleculas segun sus enlaces, espero que esta ayuda visual te lo facilite al estudiar.",
       style: TextStyle(
           fontSize:18
       ),

@@ -36,7 +36,7 @@ class ejercicios_en extends StatelessWidget{
                       ),
                       Container(
                         width: 250,
-                        child: Text("Ejercicios",style: letra,),
+                        child: Center(child: Text("Ejercicios",style: letra,)),
                         padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -478,7 +478,7 @@ class ejercicios_en extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Te estaras preguntando \n“aun no aprendo nada como resolvere ejercicios este tipo esta loco”...pues no hay mejor "
+      "Te estarás preguntando, \n“aun no aprendo nada, ¿comó resolveré ejercicios de este tipo?”...pues no hay mejor "
           "aprendizaje que ensayo y error, mejor aun si me tienes para orientarte .",
       style: TextStyle(
           fontSize: 24
@@ -503,7 +503,7 @@ class ejercicios_en extends StatelessWidget{
   }
   Text textoA(){
     return Text(
-      "E.Metalico",
+      "E.Metálico",
       style: TextStyle(
           fontSize: 20
       ),
@@ -543,7 +543,7 @@ class ejercicios_en extends StatelessWidget{
   }
   Text textoD(){
     return Text(
-      "E.Metalico",
+      "E.Metálico",
       style: TextStyle(
           fontSize: 20
       ),
@@ -583,7 +583,7 @@ class ejercicios_en extends StatelessWidget{
   }
   Text textoG(){
     return Text(
-      "E.Metalico",
+      "E.Metálico",
       style: TextStyle(
           fontSize: 20
       ),

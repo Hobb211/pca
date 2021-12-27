@@ -45,7 +45,7 @@ class IntroLimites extends StatelessWidget{
                     VerticalDivider(width: 30,),
                     Container(
                       width: scaleWidth*250,
-                      child: Text("Introduccion",style: letra,),
+                      child: Text("Introducción",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: scaleHeigth*45,vertical: scaleWidth*20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

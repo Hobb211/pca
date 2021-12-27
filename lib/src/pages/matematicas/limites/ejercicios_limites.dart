@@ -125,7 +125,7 @@ class ejercicio_limite extends StatelessWidget{
 
   Text texto(double scale){
     return Text(
-      "¿Podras resolverlos?"
+      "¿Podrás resolverlos?"
        ,
       style: TextStyle(
           fontSize: (24*scale)

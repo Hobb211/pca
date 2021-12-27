@@ -115,7 +115,7 @@ class TablaMolecular extends StatelessWidget{
   Text texto(){
     return Text(
       "Perfecto una vez tengas el diagrama de lewis hecho entre dos elementos analizaremos los electrones enlazados "
-          "segun la tabla que tenemos aca arriba para saber cual es su geometría molecular correspondiente.",
+          "segun la tabla que tenemos arriba para saber cual es su geometría molecular correspondiente.",
       style: TextStyle(
           fontSize: 16.5
       ),

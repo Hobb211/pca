@@ -138,7 +138,7 @@ class Limites1 extends StatelessWidget{
   }
    Text texto3(double scale){
     return Text(
-      "La simbologia que usaremos para estudiar los limites de una función acercándose a algún valor en específico es la siguiente: "
+      "La simbologia que usaremos para estudiar los límites de una función acercándose a algún valor en específico es la siguiente: "
        ,
       style: TextStyle(
           fontSize: (24*scale)

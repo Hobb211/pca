@@ -140,7 +140,7 @@ class ejemplosLimites extends StatelessWidget{
 
   Text texto(double scale){
     return Text(
-      "El siguiente limite es inderterminado:"
+      "El siguiente límite es inderterminado:"
        ,
       style: TextStyle(
           fontSize: (24*scale)
@@ -149,7 +149,7 @@ class ejemplosLimites extends StatelessWidget{
   }
    Text texto2(double scale){
     return Text(
-      "El siguiente limite no es inderterminado:"
+      "El siguiente límite no es inderterminado:"
        ,
       style: TextStyle(
           fontSize: (24*scale)

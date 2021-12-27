@@ -46,7 +46,7 @@ class MatricesMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,'IntroMatrices'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,49 +54,63 @@ class MatricesMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"Arreglos"),
                     style: boton,
-                    child: Text('¿Que es\n     un\n  array?',style: letra,)
+                    child: Text('¿Qué es\n     un\n  array?',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"Matriz"),
                     style: boton,
-                    child: Text('¿Que es\n     una\n  matriz?',style: letra,)
+                    child: Text('¿Qué es\n     una\n  matriz?',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,"CreandoMatriz"),
                 style: boton,
-                child: Text('¿Como se \n crea una\n  matriz?',style: letra,)
+                child: Text('¿Cómo se \n crea una\n  matriz?',style: letra,)
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"MatrizJava"),
                     style: boton,
                     child: Text('Matrices\n       en\n    Java',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,"MatrizPython"),
                     style: boton,
                     child: Text('Matrices\n       en\n  Python',style: letra,)
                 ),
+
               ],
             ),
+            Divider(),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,"MatrizPythonC"),
+                style: boton,
+                child: Text('Matrices\n       en\n  Python',style: letra,)
+            ),
+            Divider(),
+            ElevatedButton(
+                onPressed: ()=>Navigator.pushNamed(context,"EjerciciosM"),
                 style: boton,
                 child: Text('Ejercicios',style: letra,)
             ),
             Divider(),
+            ElevatedButton(onPressed: ()=>Navigator.pushNamed(context,"EjerciciosM2"),
+                style:boton,
+                child: Text('Ejercicios 2',style:letra,)
+            ),
+            Divider(),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,"DesafioFinalM"),
                 style: boton,
                 child: Text('Desafío\n   Final',style: letra,)
             ),
             Divider(height: 30,),
+
           ],
         ),
       ),

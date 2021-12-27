@@ -61,7 +61,7 @@ class EdoMenu extends StatelessWidget {
                 ElevatedButton(
                     onPressed:  ()=>Navigator.pushNamed(context, 'EcuacionesHomogeneas'),
                     style: boton,
-                    child: Text('  Ecuaciones\nHomogeneas',style: letra2,)
+                    child: Text('  Ecuaciones\nHomogéneas',style: letra2,)
                 ),
               ],
             ),

@@ -129,7 +129,7 @@ class IntroEdo extends StatelessWidget{
 
   Text texto(double scale){
     return Text(
-      '   ¿Que es?\n'
+      '   ¿Qué es?\n'
       'Una ecuación diferencial es aquella que contiene las derivadas de una o más variables '
       'dependientes con respecto a una o más variables independientes',
      

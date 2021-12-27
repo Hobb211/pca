@@ -57,19 +57,19 @@ class ConfiguracionEMenu extends StatelessWidget {
                 ElevatedButton(
                     onPressed: ()=>Navigator.pushNamed(context, 'EstructuraAtomo'),
                     style: boton,
-                    child: Text('Estructura\ndel Atomo',style: letra,)
+                    child: Text('Estructura\ndel Átomo',style: letra,)
                 ),
                 ElevatedButton(
                     onPressed: ()=>Navigator.pushNamed(context, 'DiagramaMoller'),
                     style: boton,
-                    child: Text('Diagrama\n       de\n   Moller',style: letra,)
+                    child: Text('Diagrama\n       de\n   Möller',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
                 onPressed: ()=>Navigator.pushNamed(context, 'NotacionCuantica'),
                 style: boton,
-                child: Text('Notación\nCuantica',style: letra,)
+                child: Text('Notación\nCuántica',style: letra,)
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

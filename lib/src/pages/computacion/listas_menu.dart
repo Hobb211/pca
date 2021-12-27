@@ -46,7 +46,7 @@ class ListasMenu extends StatelessWidget {
           children: <Widget>[
             Divider(height: 30,),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,'IntroListas'),
                 style: boton,
                 child: Text('Introducción',style: letra2,)
             ),
@@ -54,45 +54,50 @@ class ListasMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,'Nodo'),
                     style: boton,
-                    child: Text('¿Que es \n     un\n  nodo?',style: letra,)
+                    child: Text('¿Qué es \n     un\n  nodo?',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,'ListaEnlazada'),
                     style: boton,
-                    child: Text('  ¿Que es\n una lista\nenlazada?',style: letra,)
+                    child: Text('  ¿Qué es\n una lista\nenlazada?',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,'ListaDoble'),
                 style: boton,
-                child: Text('¿Que es una\n lista doble?',style: letra,)
+                child: Text('¿Qué es una\n lista doble?',style: letra,)
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <ElevatedButton>[
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,'FuncionListaD'),
                     style: boton,
-                    child: Text('¿Como\nfunciona\nuna lista\n  doble?',style: letra,)
+                    child: Text('¿Cómo\nfunciona\nuna lista\n  doble?',style: letra,)
                 ),
                 ElevatedButton(
-                    onPressed: null,
+                    onPressed: ()=>Navigator.pushNamed(context,'ListaPython'),
                     style: boton,
                     child: Text('    Listas\ndobles en\n  Python',style: letra,)
                 ),
               ],
             ),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,'EjerciciosL'),
                 style: boton,
                 child: Text('Ejercicios',style: letra,)
             ),
+            ElevatedButton(
+                onPressed: ()=>Navigator.pushNamed(context,'EjerciciosL2'),
+                style: boton,
+                child: Text('Ejercicios2',style: letra,)
+            ),
             Divider(),
             ElevatedButton(
-                onPressed: null,
+                onPressed: ()=>Navigator.pushNamed(context,'DesafioFinalL'),
                 style: boton,
                 child: Text('Desafío\n   Final',style: letra,)
             ),

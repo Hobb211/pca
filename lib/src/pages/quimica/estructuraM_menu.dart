@@ -70,7 +70,7 @@ class EstructuraMMenu extends StatelessWidget {
             ElevatedButton(
                 onPressed: ()=>Navigator.pushNamed(context, 'GeometriaMolecular'),
                 style: boton,
-                child: Text('Geometria\nMolecular',style: letra,)
+                child: Text('Geometría\nMolecular',style: letra,)
             ),
             Divider(height: 40,),
             Row(

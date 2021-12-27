@@ -112,7 +112,7 @@ class ionico extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Formados por transferencia de uno o más electrones de un"
+      "Formados por transferencia de uno o más electrones de un "
       "átomo o grupo de átomos a otro.",
       style: TextStyle(
           fontSize: 24

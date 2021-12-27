@@ -300,10 +300,10 @@ class ejercicios_es extends StatelessWidget {
                     children: <Widget>[
                       Row(children: <Widget>[
 
-                        VerticalDivider(width: 179,),
+                        VerticalDivider(width: 188,),
                         Container(
                           width:210,
-                          height: 190,
+                          height: 210,
                           child: texto4(),
                           padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                           decoration: BoxDecoration(
@@ -542,7 +542,8 @@ class ejercicios_es extends StatelessWidget {
 
   Text texto() {
     return Text(
-      "Que tal si ponemos en practica lo visto la molecula sera dejame pensar BeCl2 sigue estos pasos primero\n-Diagramas de lewis\n-Cuenta los pares de -e\n-Usa la Tabla para su Geometría",
+      "Que tal si ponemos en practica lo visto, la molecula sera... dejame pensar..."
+          " BeCl2, sigue estos pasos primero\n-Diagramas de lewis\n-Cuenta los pares de -e\n-Usa la Tabla para su Geometría",
       style: TextStyle(
           fontSize: 16
       ),
@@ -550,7 +551,7 @@ class ejercicios_es extends StatelessWidget {
   }
   Text texto1() {
     return Text(
-      "1) Diagrama de Lewis:\n-Necesitamos los numeros cuanticos del nivel mas "
+      "1) Diagrama de Lewis:\n-Necesitamos los números cuánticos del nivel más "
         "alto de Be y Cl\nBe: 1s2 2s2/-e=2\nCl: 1s2 2s2 2p6 3s2 3p5/-e=7",
       style: TextStyle(
           fontSize: 17
@@ -560,7 +561,8 @@ class ejercicios_es extends StatelessWidget {
 
   Text texto2() {
     return Text(
-      "2)Contamos los pares de -e\nQue exiten en la molecula de BeCl2\n-e enlazado=2\n-e libres=0",
+      "2)Contamos los pares de -e\nQue exiten en la molecula de BeCl2\n"
+          "-e enlazado=2\n-e libres=0",
       style: TextStyle(
           fontSize: 18
       ),
@@ -578,7 +580,9 @@ class ejercicios_es extends StatelessWidget {
 
   Text texto4() {
     return Text(
-      "Ya que veo que aprendes muy rapido probemos con otra molecula un poco mas compleja SF6\n-Diagramas de lewis\n-Cuenta los pares de -e\n-Usa la Tabla para su Geomtría",
+      "Ya que veo que aprendes muy rápido, probemos con otra molecula un poco mas"
+          " compleja SF6\n-Diagramas de lewis\n-Cuenta los pares de -e\n-Usa la"
+          " Tabla para su Geomtría",
       style: TextStyle(
           fontSize: 18
       ),
@@ -587,8 +591,8 @@ class ejercicios_es extends StatelessWidget {
 
   Text texto5() {
     return Text(
-      "1) Diagrama de Lewis:\n-Necesitamos los numeros cuanticos del nivel mas "
-          "alto de S y F\nF: 1s2 2s2 2p5/-e=7\nS: 1s2 2s2 2p6 3s2 3p4/-e=6",
+      "1) Diagrama de Lewis:\n-Necesitamos los números cuánticos del nivel más "
+          "alto de S y F\nF: 1s2 2s2 2p5 /-e=7\nS: 1s2 2s2 2p6 3s2 3p4 /-e=6",
       style: TextStyle(
           fontSize: 17
       ),

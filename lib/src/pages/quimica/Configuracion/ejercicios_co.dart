@@ -378,7 +378,7 @@ class ejercicios_co extends StatelessWidget {
                                     ),
                                     Container(
                                       width: 300,
-                                      height: 110,
+                                      height: 130,
                                       child: texto4(),
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 10),
@@ -545,36 +545,36 @@ class ejercicios_co extends StatelessWidget {
 
   Text texto() {
     return Text(
-      "Aca tenemos un elemento muy comun el Oxígeno su N°"
-      "Atomico es 8 en esta ocacion trabajaremos con este dato",
+      "Acá tenemos un elemento muy común el Oxígeno su N°"
+      "Átomico es 8 en esta ocasión trabajaremos con este dato",
       style: TextStyle(fontSize: 17.5),
     );
   }
 
   Text texto2() {
     return Text(
-      "Usando el Diagrama de Möller tenemos dede arriba 1s cuantos electrones aguanta este subnivel lo recuerdas?",
+      "Usando el Diagrama de Möller tenemos desde arriba 1s ¿cuántos electrones aguanta este subnivel lo recuerdas?",
       style: TextStyle(fontSize: 17.5),
     );
   }
 
   Text texto3() {
     return Text(
-      "ya comprendiste porque el por que anterior el siguiente en nuestro practico diagrama cuantos electrones le corresponden?",
+      "ya comprendiste porqué el por que anterior el siguiente en nuestro práctico diagrama ¿Cuántos electrones le corresponden?",
       style: TextStyle(fontSize: 17.5),
     );
   }
 
   Text texto4() {
     return Text(
-      "ya comprendiste el porque anterior te ayudare el que sigue es 2p para P sus electrones max es 6, pero... ¿cuantos nos quedan?",
+      "ya comprendiste el porque de la respuesta anterior, te ayudaré el que sigue es 2p para P sus electrones max es 6, pero... ¿Cuántos nos quedan?",
       style: TextStyle(fontSize: 17.5),
     );
   }
 
   Text texto5() {
     return Text(
-      "En resumen despues de todo lo visto la respuesta para el Oxígeno es 1s2 2s2 2p4",
+      "En resumen después de todo lo visto la respuesta para el Oxígeno es 1s2 2s2 2p4",
       style: TextStyle(fontSize: 19),
     );
   }
@@ -677,7 +677,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 180,
                     width: 280,
                     child: Text(
-                      "El sub nivel S puede tener como maximo solo 2 electrones lo que nos deja 6 electrones que debes distribuir en los siguientes subniveles hasta usarlos todos en el caso del Oxígeno",
+                      "El subnivel S puede tener como máximo solo 2 electrones lo que nos deja 6 electrones que debes distribuir en los siguientes subniveles hasta usarlos todos en el caso del Oxígeno",
                       style: TextStyle(fontSize: 21),
                     ),
                   ),
@@ -716,7 +716,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 180,
                     width: 280,
                     child: Text(
-                      "si bien el sub nivel S puede tener menos de su max. de electrones en esta situacion necesitas llenarlo por completo ya que el oxígeno tiene 8 electrones ",
+                      "si bien el subnivel S puede tener menos de su max. de electrones en esta situacion necesitas llenarlo por completo ya que el oxígeno tiene 8 electrones ",
                       style: TextStyle(fontSize: 22),
                     ),
                   ),
@@ -755,7 +755,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 200,
                     width: 280,
                     child: Text(
-                      "El sub nivel S puede tener como maximo solo 2 electrones ¿recuerdas cuendo te hable de la notacion cuantica? haste un ayuda memorias pero recuerda no usarlo en tus Examenes",
+                      "El subnivel S puede tener como máximo solo 2 electrones ¿recuerdas cuendo te hablé de la notación cuántica? haste un ayuda memorias pero recuerda no usarlo en tus Exámenes",
                       style: TextStyle(fontSize: 20.5),
                     ),
                   ),
@@ -794,7 +794,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 180,
                     width: 280,
                     child: Text(
-                      "En este caso 8 es el numero maximo de electrones del oxígeno pero deben distribuirse con los demas sub niveles",
+                      "En este caso 8 es el número máximo de electrones del oxígeno pero deben distribuirse con los demás subniveles",
                       style: TextStyle(fontSize: 22),
                     ),
                   ),
@@ -815,7 +815,7 @@ class ejercicios_co extends StatelessWidget {
           backgroundColor: Color(0xFF38B000),
           content: Container(
               width: 280,
-              height: 240,
+              height: 210,
               child: Column(children: <Widget>[
                 Container(
                   height: 50,
@@ -830,10 +830,10 @@ class ejercicios_co extends StatelessWidget {
                 ),
                 Row(children: <Widget>[
                   Container(
-                    height: 180,
+                    height: 130,
                     width: 280,
                     child: Text(
-                      "Excelente, creo que vamos progresando el siguiente sub nivel tendra un leve cambio",
+                      "Excelente, creo que vamos progresando el siguiente subnivel tendrá un leve cambio",
                       style: TextStyle(fontSize: 25),
                     ),
                   ),
@@ -872,7 +872,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 180,
                     width: 280,
                     child: Text(
-                      "¿6 enserio? ponele voluntad jajaja recuerda S solo aguanta maximo 2 electrones",
+                      "¿6 enserio? ponele voluntad jajaja recuerda S sólo aguanta máximo 2 electrones",
                       style: TextStyle(fontSize: 25),
                     ),
                   ),
@@ -950,7 +950,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 180,
                     width: 280,
                     child: Text(
-                      "1s22s2 suman un total de 4 electrones lo que nos deja otros 4, recuerdas que el oxígeno tiene 8, son simples sumas y restas segun el maximo de cada sub nivel... si fuera 2p6 sumarian 10 y no 8",
+                      "1s2 2s2 suman un total de 4 electrones lo que nos deja otros 4, recuerdas que el oxígeno tiene 8, son simples sumas y restas segun el máximo de cada subnivel... si fuera 2p6 sumarían 10 y no 8",
                       style: TextStyle(fontSize: 19),
                     ),
                   ),
@@ -989,7 +989,7 @@ class ejercicios_co extends StatelessWidget {
                     height: 180,
                     width: 280,
                     child: Text(
-                      "sabemos que el sub nivel P aguanta hasta 6 electrones pero solo nos quedaban 4, los sub nivel no necesitan tener siempre su maximo solo hasta que consumas todos ellos, al quedar en cero el ejercicio termina FELICITACIONES!",
+                      "sabemos que el subnivel P aguanta hasta 6 electrones pero solo nos quedaban 4, los subnivel no necesitan tener siempre su máximo solo hasta que consumas todos ellos, al quedar en cero el ejercicio termina FELICITACIONES!",
                       style: TextStyle(fontSize: 19),
                     ),
                   ),

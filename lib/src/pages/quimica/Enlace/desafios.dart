@@ -36,7 +36,7 @@ class desafios_en extends StatelessWidget{
                     ),
                     Container(
                       width: 250,
-                      child: Text("Desafios",style: letra,),
+                      child: Text("Desafíos",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: 45,vertical: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -235,8 +235,9 @@ class desafios_en extends StatelessWidget{
 
   Text texto(){
     return Text(
-      "Llego el momento de los desafios estas preparado para analizar y"
-        "descubrir en vase a lo aprendido que tipo de enlaces estan presentes en los siguientes ejemplos",
+      "Llego el momento de los desafíos, estas preparado para analizar y "
+        "descubrir en base a lo aprendido que tipo de enlaces estan "
+          "presentes en los siguientes ejemplos:",
       style: TextStyle(
           fontSize: 21
       ),

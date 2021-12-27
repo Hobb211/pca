@@ -45,7 +45,7 @@ class UsoLimite extends StatelessWidget{
                     VerticalDivider(width: 30,),
                     Container(
                       width: scaleWidth*220,
-                      child: Text("Uso de los limites",style: letra,),
+                      child: Text("Uso de los límites",style: letra,),
                       padding: EdgeInsets.symmetric(horizontal: scaleHeigth*45,vertical: scaleWidth*10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

@@ -123,7 +123,7 @@ class EcuacionesLineales extends StatelessWidget{
 
   Text texto(double scale){
     return Text(
-      "Una ecuación diferencial lineal es aquella ecuación diferencial cuyas soluciones pueden obtenerse mediante coimbinaciones lineales de otras soluciones. Estas Ultimas pueden ser ordinarias o derivadas parciales"
+      "Una ecuación diferencial lineal es aquella ecuación diferencial cuyas soluciones pueden obtenerse mediante combinaciones lineales de otras soluciones. Estas últimas pueden ser ordinarias o derivadas parciales"
        ,
       style: TextStyle(
           fontSize: (24*scale)
